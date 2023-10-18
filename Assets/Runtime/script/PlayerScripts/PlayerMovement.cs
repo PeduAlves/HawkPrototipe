@@ -11,12 +11,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpHeight = 5f;
     public GameObject groundChecker;
     public LayerMask groundMask;
-
-
-    // private void Update() {
-    //     walk();
-    //     playerGravity();
-    // }
+    private Vector3 jumpVector = new(0, 0, 0);
+    public float dashSpeed = 2000f;
+    private bool isDash = false;
 
     public bool groundCheck(){
         if(Physics.CheckSphere( groundChecker.transform.position, 0.3f, groundMask)){
@@ -27,25 +24,18 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void playerGravity(){
-
-        
-    }
-
-    public void jump(){
-        if( inputs.jumpInput && groundCheck()){
-
-            Vector3 jumpVector = new Vector3(0, jumpHeight, 0);
-
-            jumpVector.y += Mathf.Sqrt(jumpHeight * -3f * gravity);
-
+        public void playerGravity(){
+            
             jumpVector.y += gravity * Time.deltaTime;
             controller.Move(jumpVector * Time.deltaTime);
+        }
 
+    public void jump(){
             
-            print("jump");
-            inputs.jumpInput = false;
-            print("jump false");
+        if(groundCheck() && inputs.GetJumpInput()){
+            
+            jumpVector.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            controller.Move(jumpVector * Time.deltaTime);
         }
     }
 
@@ -54,6 +44,20 @@ public class PlayerMovement : MonoBehaviour
     Vector3 horizontalMove = new Vector3(0, 0, inputs.GetHorizontalInput());
 
     controller.Move( horizontalMove * Time.deltaTime * speed);
+
+   }
+
+   public void dash(){
+
+    if(inputs.GetDashInput() && !isDash){
+        
+        isDash = true;
+        Vector3 dashVector = new Vector3(0, 0, inputs.dashDirectionInput());
+        controller.Move( dashVector * Time.deltaTime * dashSpeed);
+    }
+    if(groundCheck()){
+        isDash = false;
+    }
 
    }
 }

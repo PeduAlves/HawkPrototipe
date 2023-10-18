@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
         playerMovement.walk();
         playerMovement.jump();
+        playerMovement.dash();
     }
     private void FixedUpdate() {
         

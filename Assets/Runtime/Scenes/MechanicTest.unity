@@ -275,7 +275,7 @@ Transform:
   m_GameObject: {fileID: 312744221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.84, z: 0}
+  m_LocalPosition: {x: 0, y: 3.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -321,7 +321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22dd75c76186e704a925fdcca9f9242a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpInput: 0
 --- !u!114 &312744226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,12 +349,13 @@ MonoBehaviour:
   inputs: {fileID: 312744225}
   controller: {fileID: 312744224}
   speed: 12
-  gravity: 19.62
+  gravity: -19.62
   jumpHeight: 5
   groundChecker: {fileID: 248161490}
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  dashSpeed: 2000
 --- !u!1 &338041609
 GameObject:
   m_ObjectHideFlags: 0
