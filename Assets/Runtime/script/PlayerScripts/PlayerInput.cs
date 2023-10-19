@@ -8,6 +8,8 @@ public class PlayerInputs : MonoBehaviour
     private float verticalInput;
     private bool jumpInput;
     private bool dashInput;
+    private bool aimInput;
+    private bool shootInput;
 
        private void Update()
     {
@@ -16,25 +18,27 @@ public class PlayerInputs : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
         jumpInput = Input.GetButtonDown("Jump");
         dashInput = Input.GetButtonDown("Dash");
-
+        aimInput = Input.GetButton("Aim");
+        shootInput = Input.GetButtonDown("Fire1");
     }
 
-    public float GetHorizontalInput()
-    {
+    public float GetHorizontalInput(){
         return horizontalInput;
     }
-
-    public float GetVerticalInput()
-    {
+    public float GetVerticalInput(){
         return verticalInput;
     }
-    public bool GetJumpInput()
-    {
+    public bool GetJumpInput(){
         return jumpInput;
     }
-    public bool GetDashInput()
-    {
+    public bool GetDashInput(){
         return dashInput;
+    }
+    public bool GetAimInput(){
+        return aimInput;
+    }
+    public bool GetShootInput(){
+        return shootInput;
     }
 
     public float dashDirectionInput(){

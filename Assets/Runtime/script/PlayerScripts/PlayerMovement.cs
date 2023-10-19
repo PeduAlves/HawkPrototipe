@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-        public void playerGravity(){
+    public void playerGravity(){
             
             jumpVector.y += gravity * Time.deltaTime;
             controller.Move(jumpVector * Time.deltaTime);
@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
    }
 
-   public void dash(){
+    public void dash(){
 
     if(inputs.GetDashInput() && !isDash){
         
@@ -58,6 +58,14 @@ public class PlayerMovement : MonoBehaviour
     if(groundCheck()){
         isDash = false;
     }
-
    }
+
+//  public void stopToAim(){
+
+//         if(inputs.GetAimInput()){
+//             controller.Move( new Vector3(0, 0, 0));
+//         }
+//    }
+    
+
 }
