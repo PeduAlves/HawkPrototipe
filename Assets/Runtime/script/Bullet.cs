@@ -19,4 +19,9 @@ public class Bullet : MonoBehaviour, IPooledObject
 
     }
 
+    private void OnCollisionEnter( Collision other ){
+
+        
+    }
+
 }
