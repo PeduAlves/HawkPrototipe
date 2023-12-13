@@ -25,8 +25,8 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubtractiveShadowColor: {r: 0.41960785, g: 0.627451, b: 0.5734447, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 33ab377b49aa14f6fae6e5bac230a5d4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 28e6d6f9398083d4e99cf9847c2c2919, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -244,6 +244,8 @@ MonoBehaviour:
   playerMovement: {fileID: 312744227}
   revolver: {fileID: 680039814}
   inputs: {fileID: 312744225}
+  nextFireTime: 0.01
+  fireRate: 5
 --- !u!114 &312744227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +530,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 6328075906977270725, guid: d6f053dd405454942a423fee9e8ebc9e, type: 3}
   bulletSpawn: {fileID: 1148575832}
-  bulletSpeed: 1500
   inputs: {fileID: 312744225}
 --- !u!4 &702455429 stripped
 Transform:
@@ -678,7 +679,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4901961, g: 0.4901961, b: 0.4901961, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -986,6 +987,10 @@ PrefabInstance:
     - target: {fileID: 5011748573358094976, guid: 7a7429ce6af052b459dc42d2bf68ab8a, type: 3}
       propertyPath: m_LocalScale.x
       value: 558.8007
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011748573358094976, guid: 7a7429ce6af052b459dc42d2bf68ab8a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5011748573358094976, guid: 7a7429ce6af052b459dc42d2bf68ab8a, type: 3}
       propertyPath: m_LocalPosition.x
