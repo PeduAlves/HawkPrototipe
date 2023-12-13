@@ -40,14 +40,4 @@ public class PlayerInputs : MonoBehaviour
     public bool GetShootInput(){
         return shootInput;
     }
-
-    public float dashDirectionInput(){
-
-        if( GetHorizontalInput() >= 0 ){
-            return 1;
-        }
-        else{
-            return -1;
-        }
-    }
 }

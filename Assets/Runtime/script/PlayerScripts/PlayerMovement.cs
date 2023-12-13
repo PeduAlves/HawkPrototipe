@@ -12,10 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public GameObject groundChecker;
     public LayerMask groundMask;
     private Vector3 jumpVector = new(0, 0, 0);
-    public float dashSpeed = 2000f;
-    private bool isDash = false;
+    public float dashTime = 0.025f;
+    public float dashSpeed = 1.2f;
+    
 
-    public bool groundCheck(){
+    public bool GroundCheck(){
         if(Physics.CheckSphere( groundChecker.transform.position, 0.3f, groundMask)){
             return true;
         }
@@ -24,41 +25,41 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void playerGravity(){
+    public void PlayerGravity(){
             
             jumpVector.y += gravity * Time.deltaTime;
             controller.Move(jumpVector * Time.deltaTime);
         }
 
-    public void jump(){
+    public void Jump(){
             
-        if(groundCheck() && inputs.GetJumpInput()){
+        if(GroundCheck() && inputs.GetJumpInput()){
             
             jumpVector.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             controller.Move(jumpVector * Time.deltaTime);
         }
     }
 
-    public void walk(){
+    public void Walk(){
 
-    Vector3 horizontalMove = new Vector3(0, 0, inputs.GetHorizontalInput());
+        Vector3 horizontalMove = new Vector3(0, 0, inputs.GetHorizontalInput());
 
-    controller.Move( horizontalMove * Time.deltaTime * speed);
+        controller.Move( horizontalMove * Time.deltaTime * speed);
 
    }
 
-    public void dash(){
-
-    if(inputs.GetDashInput() && !isDash){
-        
-        isDash = true;
-        Vector3 dashVector = new Vector3(0, 0, inputs.dashDirectionInput());
-        controller.Move( dashVector * Time.deltaTime * dashSpeed);
-    }
-    if(groundCheck()){
-        isDash = false;
-    }
+   IEnumerator Dash(){
+    
+        float atualTime = 0;
+        while(atualTime <= dashTime){
+            controller.Move( new Vector3(0, 0, inputs.GetHorizontalInput()* dashSpeed));
+            atualTime += Time.deltaTime;
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.5f);   
+       
    }
+   
 
 //  public void stopToAim(){
 
@@ -66,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
 //             controller.Move( new Vector3(0, 0, 0));
 //         }
 //    }
+
+
     
 
 }

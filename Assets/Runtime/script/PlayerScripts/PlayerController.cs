@@ -10,18 +10,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
 
-        playerMovement.walk();
-        playerMovement.jump();
-        playerMovement.dash();
+        playerMovement.Walk();
+        playerMovement.Jump();
         
         if(inputs.GetShootInput()){
-            revolver.shoot();
+            revolver.Shoot();
+        }
+        if(inputs.GetDashInput()){
+            playerMovement.StartCoroutine("Dash");
         }
         
     }
     private void FixedUpdate() {
         
-        playerMovement.playerGravity();
+        playerMovement.PlayerGravity();
     }
 
 }

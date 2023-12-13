@@ -9,10 +9,15 @@ public class BaseRevolver : MonoBehaviour
     public Transform bulletSpawn;
     public float bulletSpeed = 1500f;
     public PlayerInputs inputs;
+    ObjectPooler objectPooler;
 
-    public void shoot(){
+    void Start()
+    {
+        objectPooler = ObjectPooler.Instance;
+    }
 
-        GameObject bulletInstance = Instantiate(bullet, bulletSpawn.position, bulletSpawn.rotation);
-        bulletInstance.GetComponent<Rigidbody>().AddForce(0f, 0f, 1f * bulletSpeed);  
+    public void Shoot(){
+
+        objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
     }
 }
