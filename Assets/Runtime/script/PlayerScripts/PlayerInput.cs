@@ -19,7 +19,7 @@ public class PlayerInputs : MonoBehaviour
         jumpInput = Input.GetButtonDown("Jump");
         dashInput = Input.GetButtonDown("Dash");
         aimInput = Input.GetButton("Aim");
-        shootInput = Input.GetButtonDown("Fire1");
+        shootInput = Input.GetButton("Fire1");
     }
 
     public float GetHorizontalInput(){
