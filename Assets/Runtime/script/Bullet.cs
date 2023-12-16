@@ -18,9 +18,10 @@ public class Bullet : MonoBehaviour, IPooledObject
         rb.velocity = new Vector3( 0f, 0f, 1f * bulletForce * Time.deltaTime);
     }
 
-    private void OnCollisionEnter( Collision other ){
+    private void OnTriggerEnter( Collider other ){
 
-        
+        GameEvents.Instance.EnemyTakeDamageEvent();
+        gameObject.SetActive(false);
     }
 
     IEnumerator DisableBullet(){

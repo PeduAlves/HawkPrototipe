@@ -10,4 +10,5 @@ public class GameEvents : MonoBehaviour
 
   public event Action EnemyTakeDamage;
   
+  public void EnemyTakeDamageEvent() => EnemyTakeDamage?.Invoke();
 }
