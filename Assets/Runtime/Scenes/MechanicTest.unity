@@ -834,7 +834,7 @@ MonoBehaviour:
   pools:
   - tag: Bullet
     prefab: {fileID: 6328075906977270725, guid: d6f053dd405454942a423fee9e8ebc9e, type: 3}
-    size: 50
+    size: 20
 --- !u!4 &1665187320
 Transform:
   m_ObjectHideFlags: 0
@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 1967375675}
   - component: {fileID: 1967375674}
   m_Layer: 0
-  m_Name: GameEvents
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
