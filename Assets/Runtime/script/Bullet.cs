@@ -6,9 +6,10 @@ public class Bullet : MonoBehaviour, IPooledObject
 {
     
     public float bulletForce = 20f;
+    public float timeForDisable = 2f;
     public Rigidbody rb;
     public void OnObjectSpawn(){
-
+        
        StartCoroutine(DisableBullet());
     }
 
@@ -21,7 +22,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 
     IEnumerator DisableBullet(){
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(timeForDisable);
         gameObject.SetActive(false);
     }
 }
