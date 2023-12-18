@@ -34,9 +34,7 @@ public class BaseRevolver : MonoBehaviour
             bullet.SetActive(true);
         }
 
-        yield return null; // Opcional, dependendo do seu caso
-
-        // Realizar outras ações após o tiro, se necessário
+        yield return null; 
     }
 }
 

@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 jumpVector = new(0, 0, 0);
     public float dashTime = 0.025f;
     public float dashSpeed = 1.2f;
+    public bool facingRight = true;
+
+    public static PlayerMovement Instance;
+    private void Awake()=>Instance = this;
     
 
     public bool GroundCheck(){
@@ -41,7 +45,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Walk(){
+        float horizontalInput = inputs.GetHorizontalInput();
 
+        if(horizontalInput > 0 ){
+
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            facingRight = true;
+        }
+        else if(horizontalInput < 0){
+
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            facingRight = false;
+        }
         Vector3 horizontalMove = new Vector3(0, 0, inputs.GetHorizontalInput());
 
         controller.Move( horizontalMove * Time.deltaTime * speed);

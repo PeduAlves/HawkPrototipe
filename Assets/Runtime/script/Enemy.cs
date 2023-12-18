@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public int ID { get; private set; }
 
     private void Awake(){
-        
+
         ID = lastAssignedID++;
     }
 
@@ -36,5 +36,6 @@ public class Enemy : MonoBehaviour
     private void EnemyDeath(){
 
         Destroy(gameObject);
+        GameEvents.Instance.EnemyTakeDamage -= TakeDamage;
     }
 }
