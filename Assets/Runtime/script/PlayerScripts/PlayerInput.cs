@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
 {
-    private float horizontalInput;
+    private float rawHorizontalInput;
     private float verticalInput;
     private bool jumpInput;
     private bool dashInput;
     private bool aimInput;
     private bool shootInput;
 
-       private void Update()
-    {
+       private void Update(){
 
-        horizontalInput = Input.GetAxis("Horizontal");
+        rawHorizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
         jumpInput = Input.GetButtonDown("Jump");
         dashInput = Input.GetButtonDown("Dash");
@@ -23,7 +22,7 @@ public class PlayerInputs : MonoBehaviour
     }
 
     public float GetHorizontalInput(){
-        return horizontalInput;
+        return (rawHorizontalInput > 0.1f) ? 1f : (rawHorizontalInput < -0.1f) ? -1f : 0f;
     }
     public float GetVerticalInput(){
         return verticalInput;

@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Walk(){
+        
         float horizontalInput = inputs.GetHorizontalInput();
 
         if(horizontalInput > 0 ){
@@ -57,10 +58,9 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
             facingRight = false;
         }
-        Vector3 horizontalMove = new Vector3(0, 0, inputs.GetHorizontalInput());
 
+        Vector3 horizontalMove = new Vector3(0, 0, horizontalInput);
         controller.Move( horizontalMove * Time.deltaTime * speed);
-
    }
 
    IEnumerator Dash(){
@@ -74,16 +74,5 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.5f);   
        
    }
-   
-
-//  public void stopToAim(){
-
-//         if(inputs.GetAimInput()){
-//             controller.Move( new Vector3(0, 0, 0));
-//         }
-//    }
-
-
-    
 
 }
