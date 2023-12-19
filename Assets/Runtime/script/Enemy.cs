@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     private static int lastAssignedID = 0;
     public int ID { get; private set; }
@@ -18,24 +18,23 @@ public class Enemy : MonoBehaviour
     private void Start() {
 
         Life = MaxLife;
-        GameEvents.Instance.EnemyTakeDamage += TakeDamage;
+        GameEvents.Instance.TakeHit += TakeHit;
     }
-    public void TakeDamage(int ammountDamage, int id){
+    public void TakeHit(int ammountDamage, int id){
+    
+        if(id == ID){
 
-      if(id == ID){
+            Life -= ammountDamage;
+            if(Life == 0 ){
 
-        Life -= ammountDamage;
-        if(Life == 0 ){
-
-            EnemyDeath();
-        }
-      }  
-        
+                EnemyDeath();
+            }
+        }      
     }
 
     private void EnemyDeath(){
 
         Destroy(gameObject);
-        GameEvents.Instance.EnemyTakeDamage -= TakeDamage;
+        GameEvents.Instance.TakeHit -= TakeHit;
     }
 }

@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 {
     public float bulletForce = 20f;
     public float timeForDisable = 2f;
-    public int dammage = 1;
+    public int damage = 1;
     public Rigidbody rb;
     private float horizontalInput = 1f;
     
@@ -30,10 +30,11 @@ public class Bullet : MonoBehaviour, IPooledObject
 
     private void OnTriggerEnter( Collider other ){
 
-        Enemy enemy = other.GetComponent<Enemy>();
-        if(enemy){
-            
-            GameEvents.Instance.EnemyTakeDamageEvent(dammage, enemy.ID);
+        IDamageable damageable = other.GetComponent<IDamageable>();
+
+        if (damageable != null){
+
+            damageable.TakeHit(damage, damageable.ID);
         }
         gameObject.SetActive(false);
     }
