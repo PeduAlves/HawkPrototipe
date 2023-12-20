@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3077493378083339532}
   - component: {fileID: 3146820611402791247}
   - component: {fileID: 7863889720388684917}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnemyCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,4 +119,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxLife: 3
-  Life: 0

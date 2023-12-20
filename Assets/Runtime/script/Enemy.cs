@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour, IDamageable
         if(id == ID){
 
             Life -= ammountDamage;
-            if(Life == 0 ){
+            if(Life <= 0 ){
 
                 EnemyDeath();
             }
