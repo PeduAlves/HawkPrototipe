@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move( horizontalMove * Time.deltaTime * speed);
    }
 
-   IEnumerator Dash(){
+   public IEnumerator Dash(){
     
         float atualTime = 0;
         while(atualTime <= dashTime){

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public PlayerInputs inputs; 
     public float nextFireTime = 0.5f;
     public float fireRate = 0.5f;
+    private bool isDash = false;
 
     private void Update() {
 
@@ -21,15 +22,20 @@ public class PlayerController : MonoBehaviour
             nextFireTime = Time.time + 1f / fireRate;
         }
 
-        if(inputs.GetDashInput()){
+        if(inputs.GetDashInput() && !isDash){
             
-            playerMovement.StartCoroutine("Dash");
+            isDash = true;
         }
         
     }
     private void FixedUpdate() {
         
-        playerMovement.PlayerGravity();
+        if(isDash){
+
+            playerMovement.PlayerGravity();
+            playerMovement.StartCoroutine(playerMovement.Dash());
+            isDash = false;
+        }
     }
 
 }
