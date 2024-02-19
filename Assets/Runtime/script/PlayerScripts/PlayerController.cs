@@ -30,9 +30,10 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate() {
         
+        playerMovement.PlayerGravity();
+        
         if(isDash){
 
-            playerMovement.PlayerGravity();
             playerMovement.StartCoroutine(playerMovement.Dash());
             isDash = false;
         }

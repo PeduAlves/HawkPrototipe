@@ -6,6 +6,8 @@ public class BaseRevolver : MonoBehaviour
 {
     
     public GameObject bullet;
+    public int qntBullet = 6;
+    public int balasNoTambor;
     public Transform bulletSpawn;
     public PlayerInputs inputs;
     ObjectPooler objectPooler;
@@ -13,11 +15,27 @@ public class BaseRevolver : MonoBehaviour
     void Start(){
 
         objectPooler = ObjectPooler.Instance;
+        
+        balasNoTambor = qntBullet;
     }
 
     public void PlayerShoot(){
         
-        StartCoroutine(Shoot());
+        if(balasNoTambor != 0){
+
+            StartCoroutine(Shoot());
+            balasNoTambor--;
+        }
+        else{ 
+
+            Reload();
+            print("recarregando");
+        }
+    }
+
+    public void Reload(){
+
+        balasNoTambor = qntBullet;
     }
 
     IEnumerator Shoot(){

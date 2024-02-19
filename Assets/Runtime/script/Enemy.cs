@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour, IDamageable
         ID = lastAssignedID++;
     }
 
-    public int MaxLife = 3;
+    public int MaxLife = 30;
     private int Life;
 
     private void Start() {

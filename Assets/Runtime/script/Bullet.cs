@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 {
     public float bulletForce = 20f;
     public float timeForDisable = 2f;
-    public int damage = 1;
+    public int damage = 10;
     public Rigidbody rb;
     private float horizontalInput = 1f;
     
