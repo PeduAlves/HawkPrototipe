@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spines : MonoBehaviour
+public class Thorn : MonoBehaviour
 {
     public int damage = 10;
     private void OnTriggerEnter( Collider other ){
