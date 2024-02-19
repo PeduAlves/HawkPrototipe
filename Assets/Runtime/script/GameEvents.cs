@@ -9,6 +9,8 @@ public class GameEvents : MonoBehaviour
   private void Awake()=>Instance = this;
 
   public event Action <int, int> TakeHit;
+  public event Action <int> PlayerTakeDamage;
 
   public void TakeHitEvent(int ammountDamage, int id) => TakeHit?.Invoke(ammountDamage, id);
+  public void PlayerTakeDamageEvent(int ammountDamage) => PlayerTakeDamage?.Invoke(ammountDamage);
 }
