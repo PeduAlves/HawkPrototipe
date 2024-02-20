@@ -63,6 +63,20 @@ public class PlayerMovement : MonoBehaviour
         controller.Move( horizontalMove * Time.deltaTime * speed);
    }
 
+   public void Crouch(){
+
+        if(inputs.GetCrouchInput() && GroundCheck()){
+
+            speed = 6f;
+            transform.localScale = new Vector3(1, 0.5f, 1);
+        }else{
+                
+            speed = 12f;
+            transform.localScale = new Vector3(1, 1, 1);
+            
+        }
+   }
+
    public IEnumerator Dash(){
     
         float atualTime = 0;

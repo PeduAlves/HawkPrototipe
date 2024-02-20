@@ -10,6 +10,7 @@ public class PlayerInputs : MonoBehaviour
     private bool dashInput;
     private bool aimInput;
     private bool shootInput;
+    private bool isCrouching;
 
        private void Update(){
 
@@ -19,6 +20,7 @@ public class PlayerInputs : MonoBehaviour
         dashInput = Input.GetButtonDown("Dash");
         aimInput = Input.GetButton("Aim");
         shootInput = Input.GetButton("Fire1");
+        isCrouching = Input.GetKey(KeyCode.LeftControl);
     }
 
     public float GetHorizontalInput(){
@@ -38,5 +40,8 @@ public class PlayerInputs : MonoBehaviour
     }
     public bool GetShootInput(){
         return shootInput;
+    }
+    public bool GetCrouchInput(){
+        return isCrouching;
     }
 }

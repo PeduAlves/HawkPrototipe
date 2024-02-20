@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
 
+        playerMovement.Crouch();     
         playerMovement.Walk();
         playerMovement.Jump();
         
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
         
     }
     private void FixedUpdate() {
-        
+           
         playerMovement.PlayerGravity();
         
         if(isDash){
