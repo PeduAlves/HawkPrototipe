@@ -3,27 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - plataform
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - ground
-  - Player
+  - 
+  - 
   - 
   - 
   - 
   - IDamageable
+  - groundchecker
+  - ground
+  - plataform
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - test
   - 
   - 
   - 

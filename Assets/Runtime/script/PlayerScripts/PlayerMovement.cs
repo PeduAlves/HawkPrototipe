@@ -8,35 +8,40 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public float speed = 12f;
     public float gravity = -19.62f;
+    public float gravityScale = 1f;
     public float jumpHeight = 5f;
     public GameObject groundChecker;
     public LayerMask groundMask;
+    private bool isGrounded;
     private Vector3 jumpVector = new(0, 0, 0);
     public float dashTime = 0.025f;
     public float dashSpeed = 1.2f;
     public bool facingRight = true;
 
     public static PlayerMovement Instance;
-    private void Awake()=>Instance = this;
-    
+    private void Awake(){
 
-    public bool GroundCheck(){
-        if(Physics.CheckSphere( groundChecker.transform.position, 0.3f, groundMask)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        Instance = this;
     }
 
+    public bool GroundCheck()
+    {
+        isGrounded = Physics.CheckSphere(groundChecker.transform.position, 0.3f, groundMask);
+        return isGrounded;
+    }
     public void PlayerGravity(){
             
-            jumpVector.y += gravity * Time.deltaTime;
-            controller.Move(jumpVector * Time.deltaTime);
+            jumpVector.y += gravity* gravityScale * Time.deltaTime;
+
+            if(GroundCheck() && jumpVector.y < 0){
+                jumpVector.y = -2f;
+            }
+
+            controller.Move(jumpVector * Time.deltaTime); 
         }
 
     public void Jump(){
-            
+        //print(groundChecker.IsGrounded());
         if(GroundCheck() && inputs.GetJumpInput()){
             
             jumpVector.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
