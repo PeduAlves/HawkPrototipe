@@ -49,24 +49,27 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Walk(){
-        
-        float horizontalInput = inputs.GetHorizontalInput();
+   public void Walk(){
 
-        if(horizontalInput > 0 ){
+    float horizontalInput = inputs.GetHorizontalInput();
+    if (horizontalInput > 0){
 
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            facingRight = true;
-        }
-        else if(horizontalInput < 0){
+        facingRight = true;
+    }
+    else if (horizontalInput < 0){
 
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-            facingRight = false;
-        }
+        facingRight = false;
+    }
 
-        Vector3 horizontalMove = new Vector3(0, 0, horizontalInput);
-        controller.Move( horizontalMove * Time.deltaTime * speed);
-   }
+    if (horizontalInput != 0){
+
+        Vector3 moveDirection = new Vector3(0,0,horizontalInput);
+        transform.rotation = Quaternion.LookRotation(moveDirection);
+    }
+
+    Vector3 horizontalMove = new Vector3(0,0, horizontalInput);
+    controller.Move(horizontalMove * Time.deltaTime * speed);
+}
 
    public void Crouch(){
 
