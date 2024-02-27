@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public bool facingRight = true;
 
     public static PlayerMovement Instance;
+
     private void Awake(){
 
         Instance = this;
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundChecker.transform.position, 0.3f, groundMask);
         return isGrounded;
     }
+    
     public void PlayerGravity(){
             
             jumpVector.y += gravity* gravityScale * Time.deltaTime;
@@ -39,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
             controller.Move(jumpVector * Time.deltaTime); 
         }
-
+    
     public void Jump(){
         //print(groundChecker.IsGrounded());
         if(GroundCheck() && inputs.GetJumpInput()){
@@ -49,9 +52,12 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   public void Walk(){
+    public void Walk(){
 
     float horizontalInput = inputs.GetHorizontalInput();
+    int UpInput = inputs.GetUpInput() ? 1 : 0;
+
+    //função para verificar a direção que o personagem está olhando
     if (horizontalInput > 0){
 
         facingRight = true;
@@ -61,17 +67,19 @@ public class PlayerMovement : MonoBehaviour
         facingRight = false;
     }
 
+    //função para rotacionar o personagem
     if (horizontalInput != 0){
 
-        Vector3 moveDirection = new Vector3(0,0,horizontalInput);
+        Vector3 moveDirection = new Vector3(0,UpInput,horizontalInput);
         transform.rotation = Quaternion.LookRotation(moveDirection);
     }
 
+    //função para mover o personagem
     Vector3 horizontalMove = new Vector3(0,0, horizontalInput);
     controller.Move(horizontalMove * Time.deltaTime * speed);
 }
 
-   public void Crouch(){
+    public void Crouch(){
 
         if(inputs.GetCrouchInput() && GroundCheck()){
 
@@ -85,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
         }
    }
 
-   public IEnumerator Dash(){
+    public IEnumerator Dash(){
     
         float atualTime = 0;
         while(atualTime <= dashTime){
@@ -95,6 +103,13 @@ public class PlayerMovement : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);   
        
-   }
+    }
 
+    public void Aim(){
+
+        if(inputs.GetAimInput()){
+
+            speed = 0f;
+        }
+    }
 }
