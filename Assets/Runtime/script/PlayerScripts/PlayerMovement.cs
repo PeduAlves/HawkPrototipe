@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private Vector3 jumpVector = new(0, 0, 0);
     public float dashTime = 0.025f;
-    public float dashSpeed = 1.2f;
+    public float dashSpeed = 0.2f;
     public bool facingRight = true;
 
     public static PlayerMovement Instance;
@@ -94,10 +94,11 @@ public class PlayerMovement : MonoBehaviour
    }
 
     public IEnumerator Dash(){
-    
+        
+        float dashSide = facingRight ? 1 : -1;
         float atualTime = 0;
         while(atualTime <= dashTime){
-            controller.Move( new Vector3(0, 0, inputs.GetHorizontalInput()* dashSpeed));
+            controller.Move( new Vector3(0, 0, dashSide * dashSpeed));
             atualTime += Time.deltaTime;
             yield return null;
         }

@@ -352,7 +352,8 @@ MonoBehaviour:
   nextFireTime: 0.01
   fireRate: 2
   nextDashTime: 0.01
-  dashRate: 1.2
+  dashRate: 2
+  airDash: 1
 --- !u!114 &312744227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,8 +376,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 24576
-  dashTime: 0.15
-  dashSpeed: 0.15
+  dashTime: 0.2
+  dashSpeed: 0.2
   facingRight: 1
 --- !u!114 &312744228
 MonoBehaviour:
