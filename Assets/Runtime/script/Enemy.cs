@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void EnemyDeath(){
 
+        GameEvents.Instance.PlayerHealEvent(10);
         Destroy(gameObject);
         GameEvents.Instance.TakeHit -= TakeHit;
     }

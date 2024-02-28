@@ -11,19 +11,33 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
         
         health = maxHealth;
         GameEvents.Instance.PlayerTakeDamage += PlayerTakeDamage;
+        GameEvents.Instance.PlayerHeal += PlayerHeal;
     }
 
     public void PlayerTakeDamage(int ammountDamage){
 
-       health -= ammountDamage;
-       if(health <= 0){
+        print("Player take " + ammountDamage + " damage");
+        health -= ammountDamage;
+        if(health <= 0){
            Die();
            Time.timeScale = 0;
-       }
+        }
     }
+
+    public void PlayerHeal(int ammountHeal){
+
+        print("Player heal " + ammountHeal + " life");
+
+        health += ammountHeal;
+        if(health > maxHealth){
+            health = maxHealth;
+        }
+    }
+
     public void Die(){
         Debug.Log("Player died");
         GameEvents.Instance.PlayerTakeDamage -= PlayerTakeDamage;
+        GameEvents.Instance.PlayerHeal -= PlayerHeal;
     }
 
 }
