@@ -351,6 +351,8 @@ MonoBehaviour:
   inputs: {fileID: 312744225}
   nextFireTime: 0.01
   fireRate: 2
+  nextDashTime: 0.01
+  dashRate: 1.2
 --- !u!114 &312744227
 MonoBehaviour:
   m_ObjectHideFlags: 0
