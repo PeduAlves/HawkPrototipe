@@ -17,14 +17,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 jumpVector = new(0, 0, 0);
     public float dashTime = 0.025f;
     public float dashSpeed = 0.2f;
+    public float jumpSpeed = 0.2f;
     public bool facingRight = true;
 
     public static PlayerMovement Instance;
 
-    private void Awake(){
-
-        Instance = this;
-    }
+    private void Awake() => Instance = this;
 
     public bool GroundCheck()
     {
@@ -48,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         if(GroundCheck() && inputs.GetJumpInput()){
             
             jumpVector.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            controller.Move(jumpVector * Time.deltaTime);
+            controller.Move(jumpVector * jumpSpeed * Time.deltaTime);
         }
     }
 
@@ -112,5 +110,9 @@ public class PlayerMovement : MonoBehaviour
 
             speed = 0f;
         }
+    }
+
+    public void HawkEye(){
+
     }
 }

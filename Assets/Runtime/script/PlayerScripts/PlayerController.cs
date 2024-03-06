@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float nextDashTime = 0.01f;
     public float dashRate = 1f;
     private bool isDash = false;
-   public bool airDash = true;
+    private bool airDash = true;
 
     private void Update() {
 

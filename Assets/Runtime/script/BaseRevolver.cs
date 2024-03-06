@@ -28,14 +28,15 @@ public class BaseRevolver : MonoBehaviour
         }
         else{ 
 
-            Reload();
+            StartCoroutine(Reload());
             print("recarregando");
         }
     }
 
-    public void Reload(){
+    IEnumerator Reload(){
 
         balasNoTambor = qntBullet;
+        yield return new WaitForSeconds(2);
     }
 
     IEnumerator Shoot(){
