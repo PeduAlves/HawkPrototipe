@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour, IDamageable
             switch (currentState)
             {
                 case EnemyState.Resting:
-                    // Implemente o comportamento de descansar aqui
+                    transform.rotation = Quaternion.Euler(090, 090, 090);
                     if (PlayerInSight())
                         currentState = EnemyState.Spoting;
                     break;
@@ -61,6 +61,8 @@ public class Enemy : MonoBehaviour, IDamageable
                     break;
 
                 case EnemyState.Spoting:
+                    transform.rotation = Quaternion.Euler(0, 0, 0);
+                    
                     // Implemente o comportamento de avistar aqui
                     if (PlayerInSight())
                         currentState = EnemyState.Following;
