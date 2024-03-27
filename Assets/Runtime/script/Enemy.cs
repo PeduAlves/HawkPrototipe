@@ -19,9 +19,10 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public Transform player; // Referência ao jogador
     public float sightRange = 10f; // Alcance de visão do inimigo
-    public float attackRange = 2f; // Alcance de ataque do inimigo
+    public float attackRange = 5f; // Alcance de ataque do inimigo
     public float patrolSpeed = 2f; // Velocidade de patrulha
     public float followSpeed = 4f; // Velocidade de seguir o jogador
+    public GameObject SpotingEffect;
 
     private static int lastAssignedID = 0;
     public EnemyState currentState;
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
         Life = MaxLife;
         GameEvents.Instance.TakeHit += TakeHit;
         StartCoroutine(UpdateState());
+        SpotingEffect.SetActive(false);
     }
 
     IEnumerator UpdateState()
@@ -55,13 +57,15 @@ public class Enemy : MonoBehaviour, IDamageable
                     break;
 
                 case EnemyState.Patrolling:
-                    // Implemente o comportamento de patrulhar aqui
+                    
                     if (PlayerInSight())
                         currentState = EnemyState.Spoting;
                     break;
 
                 case EnemyState.Spoting:
                     transform.rotation = Quaternion.Euler(0, 0, 0);
+                    
+                    StartCoroutine(SpotingEffectCoroutine());
                     
                     // Implemente o comportamento de avistar aqui
                     if (PlayerInSight())
@@ -71,11 +75,9 @@ public class Enemy : MonoBehaviour, IDamageable
                     break;
 
                 case EnemyState.Searching:
-                    // Implemente o comportamento de Searching aqui
-                    if (PlayerInSight())
-                        currentState = EnemyState.Spoting;
-                    else
-                        currentState = EnemyState.Patrolling;
+
+                    StartCoroutine(SearchingCoroutine());
+
                     break;
 
                 case EnemyState.Attacking:
@@ -85,7 +87,12 @@ public class Enemy : MonoBehaviour, IDamageable
                     break;
 
                 case EnemyState.Following:
-                    // Implemente o comportamento de seguir aqui
+                                       
+                    transform.position = Vector3.MoveTowards(transform.position, player.position, followSpeed * Time.deltaTime);
+                    Vector3 directionToPlayer = player.position - transform.position;
+                    Quaternion targetRotation = Quaternion.LookRotation(new Vector3(directionToPlayer.x, 0f, directionToPlayer.z));
+                    transform.rotation = targetRotation;
+    
                     if (PlayerInAttackRange())
                         currentState = EnemyState.Attacking;
                     else if (!PlayerInSight())
@@ -125,5 +132,26 @@ public class Enemy : MonoBehaviour, IDamageable
         GameEvents.Instance.PlayerHealEvent(10);
         Destroy(gameObject);
         GameEvents.Instance.TakeHit -= TakeHit;
+    }
+
+    IEnumerator SpotingEffectCoroutine(){
+
+        SpotingEffect.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        SpotingEffect.SetActive(false);
+    }
+
+    IEnumerator SearchingCoroutine(){
+
+        transform.rotation = Quaternion.Euler(0, 180, 0);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(0,transform.position.y,transform.position.x+2f), followSpeed * Time.deltaTime);
+        yield return new WaitForSeconds(2f);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(0,transform.position.y,transform.position.x-2f), followSpeed * Time.deltaTime);
+
+        if (PlayerInSight())
+            currentState = EnemyState.Spoting;
+        else
+            currentState = EnemyState.Patrolling;
     }
 }
