@@ -1151,12 +1151,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2750968464511600867, guid: e85d323970c263547ab0fe3311067534, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7863889720388684917, guid: e85d323970c263547ab0fe3311067534, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 312744222}
+    - target: {fileID: 7863889720388684917, guid: e85d323970c263547ab0fe3311067534, type: 3}
+      propertyPath: MaxLife
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 7863889720388684917, guid: e85d323970c263547ab0fe3311067534, type: 3}
       propertyPath: patrolPoints.Array.size
       value: 2
