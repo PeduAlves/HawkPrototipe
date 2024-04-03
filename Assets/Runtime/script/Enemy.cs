@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour, IDamageable
         Resting,
         Patrolling,
         Spoting,
-        Searching,
         Following,
         Attacking
     }
@@ -23,6 +22,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public float patrolSpeed = 2f; // Velocidade de patrulha
     public float followSpeed = 4f; // Velocidade de seguir o jogador
     public GameObject SpotingEffect;
+    public Transform[] patrolPoints; // Pontos de patrulha
 
     private static int lastAssignedID = 0;
     public EnemyState currentState;
@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour, IDamageable
             switch (currentState)
             {
                 case EnemyState.Resting:
-                    transform.rotation = Quaternion.Euler(090, 090, 090);
+                    transform.rotation = Quaternion.Euler(-90, 0, 0);
                     if (PlayerInSight())
                         currentState = EnemyState.Spoting;
                     break;
@@ -71,13 +71,7 @@ public class Enemy : MonoBehaviour, IDamageable
                     if (PlayerInSight())
                         currentState = EnemyState.Following;
                     else
-                        currentState = EnemyState.Searching;
-                    break;
-
-                case EnemyState.Searching:
-
-                    StartCoroutine(SearchingCoroutine());
-
+                        currentState = EnemyState.Patrolling;
                     break;
 
                 case EnemyState.Attacking:
@@ -96,7 +90,7 @@ public class Enemy : MonoBehaviour, IDamageable
                     if (PlayerInAttackRange())
                         currentState = EnemyState.Attacking;
                     else if (!PlayerInSight())
-                        currentState = EnemyState.Searching;
+                        currentState = EnemyState.Patrolling;
                     break;
             }
 
@@ -104,14 +98,12 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-       bool PlayerInSight()
-    {
+       bool PlayerInSight(){
         // Verifique se o jogador está dentro do alcance de visão
         return Vector3.Distance(transform.position, player.position) <= sightRange;
     }
 
-    bool PlayerInAttackRange()
-    {
+    bool PlayerInAttackRange(){
         // Verifique se o jogador está dentro do alcance de ataque
         return Vector3.Distance(transform.position, player.position) <= attackRange;
     }
@@ -141,17 +133,4 @@ public class Enemy : MonoBehaviour, IDamageable
         SpotingEffect.SetActive(false);
     }
 
-    IEnumerator SearchingCoroutine(){
-
-        transform.rotation = Quaternion.Euler(0, 180, 0);
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(0,transform.position.y,transform.position.x+2f), followSpeed * Time.deltaTime);
-        yield return new WaitForSeconds(2f);
-        transform.rotation = Quaternion.Euler(0, 0, 0);
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(0,transform.position.y,transform.position.x-2f), followSpeed * Time.deltaTime);
-
-        if (PlayerInSight())
-            currentState = EnemyState.Spoting;
-        else
-            currentState = EnemyState.Patrolling;
-    }
 }

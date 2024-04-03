@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5275774155353466684}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2378031066820195382}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 14.74, z: -15.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   groundChecker: {fileID: 8514872894213299595}
   groundMask:
     serializedVersion: 2
-    m_Bits: 24576
+    m_Bits: 57344
   dashTime: 0.17
   dashSpeed: 0.12
   jumpSpeed: 0.2
