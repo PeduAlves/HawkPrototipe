@@ -8,6 +8,7 @@ public class DownPlataform : MonoBehaviour
     public TopColliderPlataform checkPlayerTop;
     public BotColliderPlataform checkPlayerBot;
     public BoxCollider boxCollider;
+    public float waitTime= 0.5f;
     private int layer;
 
     private void Start()
@@ -17,10 +18,10 @@ public class DownPlataform : MonoBehaviour
     private void Update()
     {
         if (checkPlayerTop.IsPlayerOnPlatform() && Input.GetKeyDown(KeyCode.S)){
-
+            
+            StartCoroutine(wait()); 
             boxCollider.isTrigger = true; 
-            gameObject.layer = 18;   
-            StartCoroutine(wait());            
+            gameObject.layer = 18;              
         }
         if (checkPlayerBot.IsPlayerOnPlatform()){
 
@@ -33,11 +34,12 @@ public class DownPlataform : MonoBehaviour
 
             boxCollider.isTrigger = false;
             gameObject.layer = layer;
+
         }
     }
     IEnumerator wait(){
         checkPlayerBot.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(waitTime);
         checkPlayerBot.gameObject.SetActive(true);
     }
 }
