@@ -14,13 +14,15 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     public float attackRange = 5f;
     public float enemySpeed = 10f;
     public float patrolSpeed = 4f;
+    public float attackDelay = 2f;  
     public float enemyMaxLife = 30f;
-    public GameObject enemySight;
+    public GameObject gun;
     public Transform []patrolPoints;
     
     private int currentPatrolIndex = 0;
     private float enemyLife;
     private bool isDie = false;
+    private bool playerInSight = false;
     private enemyStates state;
 
     public int ID { get; private set; }
@@ -42,27 +44,37 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         switch(state){
             case enemyStates.DIE:
                 break;
+
             case enemyStates.PATROL:
-                StartCoroutine(Patrol());
+                if (playerInSight) state = enemyStates.FOLLOW;
+                else StartCoroutine(Patrol());
             break;
+
             case enemyStates.FOLLOW:
-                Follow();
-                break;
+                if(!playerInSight)state = enemyStates.PATROL;
+                else Follow();
+            break;
+
             case enemyStates.ATTACK:
-                Attack();
+                if(!playerInSight) state = enemyStates.PATROL;
+                if(PlayerInAttackRange()) Attack();
+                else Follow();
             break;
 
         }
     }
-
-    /* private protected virtual void Patrol(){
-        
-    } */
     private protected virtual void Follow(){
-
+        if(PlayerInAttackRange()){ 
+            
+            state = enemyStates.ATTACK;
+            return;
+        }
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+        transform.position = Vector3.MoveTowards(transform.position, player.position, enemySpeed * Time.deltaTime);
     }
-    private protected virtual void Attack(){
-
+    protected virtual IEnumerator Attack(){
+        
+        yield return new WaitForSeconds(attackDelay);   
     }
     protected virtual IEnumerator die(){
 
@@ -93,7 +105,6 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
             if(isDie) return;
             enemyLife -= ammountDamage;
-            print("Enemy " + ID + " life: " + enemyLife);
 
             if( enemyLife > 0){
 
@@ -105,5 +116,28 @@ public class BaseEnemy : MonoBehaviour, IDamageable
                 StartCoroutine(die());
             }
         }      
+    }
+    private void OnTriggerEnter(Collider other) {
+
+        if (other.CompareTag("Player")) {
+
+            playerInSight = true;
+        }
+    }
+    private void OnTriggerExit(Collider other) {
+        
+        if (other.CompareTag("Player")) {
+            
+            playerInSight = false;
+        }
+    } 
+    private bool PlayerInAttackRange(){
+        
+        return Vector3.Distance(transform.position, player.position) <= attackRange;
+    }
+    private void OnDrawGizmos() {
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
