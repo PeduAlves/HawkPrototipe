@@ -86,8 +86,7 @@ public class PlayerMovement : MonoBehaviour
         }else{
                 
             speed = 12f;
-            transform.localScale = new Vector3(1, 1, 1);
-            
+            transform.localScale = new Vector3(1, 1, 1);   
         }
    }
 

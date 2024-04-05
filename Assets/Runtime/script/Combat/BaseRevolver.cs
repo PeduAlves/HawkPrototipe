@@ -43,8 +43,8 @@ public class BaseRevolver : MonoBehaviour
 
         GameObject bullet = objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
 
-        if (bullet != null)
-        {
+        if (bullet != null){
+            
             // Configurar a posição e outras propriedades do projétil
             bullet.transform.position = transform.position;
             bullet.transform.rotation = transform.rotation;
