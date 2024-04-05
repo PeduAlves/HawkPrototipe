@@ -14,7 +14,8 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     public float attackRange = 5f;
     public float enemySpeed = 10f;
     public float patrolSpeed = 4f;
-    public float attackDelay = 2f;  
+    public float attackDelay = 2f;
+    public float attackDistance = 2f;  
     public float enemyMaxLife = 30f;
     public GameObject gun;
     public Transform []patrolPoints;
@@ -22,6 +23,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     private int currentPatrolIndex = 0;
     private float enemyLife;
     private bool isDie = false;
+    private bool isAttacking = false;
     private bool playerInSight = false;
     private enemyStates state;
 
@@ -57,7 +59,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
             case enemyStates.ATTACK:
                 if(!playerInSight) state = enemyStates.PATROL;
-                if(PlayerInAttackRange()) Attack();
+                if(PlayerInAttackRange() && !isAttacking) StartCoroutine(Attack());
                 else Follow();
             break;
 
@@ -74,7 +76,11 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     }
     protected virtual IEnumerator Attack(){
         
-        yield return new WaitForSeconds(attackDelay);   
+        isAttacking = true;
+        gun.transform.localScale = new Vector3(0.1f, attackDistance, 0.2f);
+        yield return new WaitForSeconds(attackDelay);
+        gun.transform.localScale = new Vector3(0.1f, 0.4f, 0.2f);
+        isAttacking = false;   
     }
     protected virtual IEnumerator die(){
 
@@ -107,8 +113,8 @@ public class BaseEnemy : MonoBehaviour, IDamageable
             enemyLife -= ammountDamage;
 
             if( enemyLife > 0){
-
-                //state = enemyStates.FOLLOW;
+                
+                state = enemyStates.FOLLOW;
             }
             else{
 
