@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3916652988734629502}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.874449, y: 3.3524637, z: -3.941585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47,4 +47,4 @@ MonoBehaviour:
   pools:
   - tag: Bullet
     prefab: {fileID: 6328075906977270725, guid: d6f053dd405454942a423fee9e8ebc9e, type: 3}
-    size: 20
+    size: 10

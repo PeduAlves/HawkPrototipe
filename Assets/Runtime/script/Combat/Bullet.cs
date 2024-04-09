@@ -7,8 +7,8 @@ public class Bullet : MonoBehaviour, IPooledObject
     public float bulletForce = 20f;
     public float timeForDisable = 2f;
     public int damage = 10;
-    public float yAxisForce = 0; 
-    public float zAxisForce = 1;
+    public float yAxisForce; 
+    public float zAxisForce;
     public Rigidbody rb;
     private Vector3 shootDirection; 
     public PlayerInputs PlayerInputs;
@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 
     private void FixedUpdate() {
 
+        shootDirection = new Vector3( 0 , yAxisForce, zAxisForce );
         rb.velocity = shootDirection * bulletForce;
     }
 
@@ -40,10 +41,10 @@ public class Bullet : MonoBehaviour, IPooledObject
         yield return new WaitForSeconds(timeForDisable);
         gameObject.SetActive(false);
     }
+    public void SetForces(float yAxis, float zAxis){
 
-    private void calculateDirection(){
-
-        
-        shootDirection = new Vector3(0, yAxisForce, zAxisForce);
+        // Configurar as forças do eixo Y e Z para serem usadas na direção da bala
+        yAxisForce = yAxis;
+        zAxisForce = zAxis;
     }
 }

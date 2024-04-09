@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputs: {fileID: 6578160486141127412}
   controller: {fileID: 1104524866830172891}
-  speed: 12
+  speed: 20
   gravity: -19.62
   gravityScale: 1.8
   jumpHeight: 10
@@ -163,14 +163,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2703720693411715419}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.025634177, y: 0.706642, z: 0.70664203, w: 0.025634183}
-  m_LocalPosition: {x: 0.627, y: 2.7833648, z: 0.43}
-  m_LocalScale: {x: 0.1, y: 0.6000001, z: 0.10000002}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0.627, y: 3.16, z: 0.935}
+  m_LocalScale: {x: 0.1, y: 0.41169006, z: 0.10000002}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6499752474271505428}
   m_Father: {fileID: 2619353112665911762}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
 --- !u!33 &6061510320610599708
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -238,6 +238,7 @@ MonoBehaviour:
   balasNoTambor: 0
   bulletSpawn: {fileID: 6499752474271505428}
   inputs: {fileID: 6578160486141127412}
+  movement: {fileID: 6858565628188696598}
 --- !u!1 &6383547893965379735
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,8 +266,8 @@ Transform:
   m_GameObject: {fileID: 6383547893965379735}
   serializedVersion: 2
   m_LocalRotation: {x: -0.036252204, y: -0.9993427, z: -0, w: 0}
-  m_LocalPosition: {x: -0.102, y: 1.599, z: -0.191}
-  m_LocalScale: {x: 0.75, y: 1.7132926, z: 1.4220582}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 369224941146167539}
@@ -376,13 +377,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8985933195942994633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.312, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6393016531266023210}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &186188403392790296
 PrefabInstance:
   m_ObjectHideFlags: 0
