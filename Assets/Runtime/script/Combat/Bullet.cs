@@ -7,25 +7,20 @@ public class Bullet : MonoBehaviour, IPooledObject
     public float bulletForce = 20f;
     public float timeForDisable = 2f;
     public int damage = 10;
+    public float yAxisForce = 0; 
+    public float zAxisForce = 1;
     public Rigidbody rb;
-    private float horizontalInput = 1f;
+    private Vector3 shootDirection; 
+    public PlayerInputs PlayerInputs;
     
     public void OnObjectSpawn(){
         
         StartCoroutine(DisableBullet());
-        if(PlayerMovement.Instance.facingRight){
-            
-            horizontalInput = 1f;
-        }
-        else{
-            
-            horizontalInput = -1f;
-        }
     }
 
     private void FixedUpdate() {
 
-        rb.velocity = new Vector3( 0f, 0f, horizontalInput * bulletForce * Time.deltaTime);
+        rb.velocity = shootDirection * bulletForce;
     }
 
     private void OnTriggerEnter( Collider other ){
@@ -36,6 +31,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 
             damageable.TakeHit(damage, damageable.ID);
         }
+
         gameObject.SetActive(false);
     }
 
@@ -43,5 +39,11 @@ public class Bullet : MonoBehaviour, IPooledObject
 
         yield return new WaitForSeconds(timeForDisable);
         gameObject.SetActive(false);
+    }
+
+    private void calculateDirection(){
+
+        
+        shootDirection = new Vector3(0, yAxisForce, zAxisForce);
     }
 }

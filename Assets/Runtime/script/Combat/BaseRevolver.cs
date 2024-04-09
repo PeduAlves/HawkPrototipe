@@ -9,19 +9,17 @@ public class BaseRevolver : MonoBehaviour
     public int qntBullet = 6;
     public int balasNoTambor;
     public Transform bulletSpawn;
-    public PlayerInputs inputs;
     ObjectPooler objectPooler;
 
     void Start(){
 
         objectPooler = ObjectPooler.Instance;
-        
         balasNoTambor = qntBullet;
     }
 
     public void PlayerShoot(){
         
-        if(balasNoTambor != 0){
+        if(balasNoTambor > 0){
 
             StartCoroutine(Shoot());
             balasNoTambor--;
@@ -35,8 +33,8 @@ public class BaseRevolver : MonoBehaviour
 
     IEnumerator Reload(){
 
-        balasNoTambor = qntBullet;
         yield return new WaitForSeconds(2);
+        balasNoTambor = qntBullet;
     }
 
     IEnumerator Shoot(){
@@ -46,8 +44,8 @@ public class BaseRevolver : MonoBehaviour
         if (bullet != null){
             
             // Configurar a posição e outras propriedades do projétil
-            bullet.transform.position = transform.position;
-            bullet.transform.rotation = transform.rotation;
+            bullet.transform.position = bulletSpawn.position;
+            bullet.transform.rotation = bulletSpawn.rotation;
 
             // Ativar o objeto para começar o tiro
             bullet.SetActive(true);
