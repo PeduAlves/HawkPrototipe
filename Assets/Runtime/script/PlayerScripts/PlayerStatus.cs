@@ -9,6 +9,7 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     public GameObject LastBackPoint;
     public CharacterController controller;
     public float timeToBackPoint = 0.5f;
+    private Vector3 backPoint;
 
     private void Start() {
         
@@ -40,9 +41,14 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     }
 
     IEnumerator ReturnBackPointCourotine(){
+
+        if(LastBackPoint == null){
+            backPoint = new Vector3(0,0,0);
+        }
+        backPoint = LastBackPoint.transform.position;
         yield return new WaitForSeconds(timeToBackPoint);
         controller.enabled = false;
-        transform.position = LastBackPoint.transform.position;
+        transform.position = backPoint;
         controller.enabled = true;
     }
 

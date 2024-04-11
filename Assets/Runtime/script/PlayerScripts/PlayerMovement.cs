@@ -18,7 +18,10 @@ public class PlayerMovement : MonoBehaviour
     public float dashTime = 0.025f;
     public float dashSpeed = 0.2f;
     public float jumpSpeed = 0.2f;
+    public float climbSpeed = 10f;
     public bool facingRight = true;
+    private bool isClimb = false; 
+    public float waitClimb = 0.3f;   
 
     public static PlayerMovement Instance;
 
@@ -32,13 +35,16 @@ public class PlayerMovement : MonoBehaviour
     
     public void PlayerGravity(){
             
-            jumpVector.y += gravity* gravityScale * Time.deltaTime;
+            if(!isClimb){
+                
+                jumpVector.y += gravity* gravityScale * Time.deltaTime;
 
-            if(GroundCheck() && jumpVector.y < 0){
-                jumpVector.y = -2f;
-            }
+                if(GroundCheck() && jumpVector.y < 0){
+                    jumpVector.y = -2f;
+                }
 
-            controller.Move(jumpVector * Time.deltaTime); 
+                controller.Move(jumpVector * Time.deltaTime);
+            } 
         }
     
     public void Jump(){
@@ -113,5 +119,23 @@ public class PlayerMovement : MonoBehaviour
 
     public void HawkEye(){
         
+    }
+    public void Climb(){
+
+        StartCoroutine(ClimbLadder());
+    }
+    public void noClimb(){
+        
+        isClimb = false;
+        StopCoroutine(ClimbLadder());
+    }
+
+    IEnumerator ClimbLadder(){
+
+        isClimb = true;
+        Vector3 verticalMove = new Vector3(0, 5, 0);
+        controller.Move(verticalMove * Time.deltaTime * climbSpeed);
+        yield return null;
+        if(inputs.GetCrouchInput()) isClimb = false;
     }
 }

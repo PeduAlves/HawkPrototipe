@@ -18,6 +18,7 @@ public class PlayerInputs : MonoBehaviour
         rawHorizontalInput = Input.GetAxis("Horizontal");
         UpInput = Input.GetButton("Up");
         jumpInput = Input.GetButtonDown("Jump");
+        // climbInput = Input.GetButton("Jump");
         dashInput = Input.GetButtonDown("Dash");
         aimInput = Input.GetButton("Aim");
         shootInput = Input.GetButton("Fire1");
