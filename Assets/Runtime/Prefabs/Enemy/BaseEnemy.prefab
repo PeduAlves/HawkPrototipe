@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 8516134705976484170}
   m_Layer: 11
   m_Name: BaseEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -348,8 +348,8 @@ MonoBehaviour:
   enemyMaxLife: 30
   gun: {fileID: 4979767049964693352}
   patrolPoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8084912829139467915}
+  - {fileID: 8084912829139467915}
 --- !u!54 &8516134705976484170
 Rigidbody:
   m_ObjectHideFlags: 0

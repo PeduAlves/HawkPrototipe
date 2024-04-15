@@ -11,14 +11,14 @@ public class BaseHatSkill : MonoBehaviour
     private bool isHatSkill = false;
 
 
-    public void HatSkill(){
+    public virtual void HatSkill(){
         
         if(inputs.GetHatSkillInput() && !isHatSkill){
 
             StartCoroutine(hatSkillCourotine());
         }
     }
-    IEnumerator hatSkillCourotine(){
+    protected virtual IEnumerator hatSkillCourotine(){
         
         isHatSkill = true;
         gun.balasNoTambor = gun.qntBullet;

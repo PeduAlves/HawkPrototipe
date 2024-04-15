@@ -39,6 +39,8 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         enemyLife = enemyMaxLife;
         state = enemyStates.PATROL;
         GameEvents.Instance.TakeHit += TakeHit;
+        if(patrolPoints.Length == 0) state = enemyStates.FOLLOW;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     private void Update(){

@@ -21,11 +21,19 @@ public class PlayerMovement : MonoBehaviour
     public float climbSpeed = 10f;
     public bool facingRight = true;
     private bool isClimb = false; 
-    public float waitClimb = 0.3f;   
+    public float waitClimb = 0.3f;
+    public BoxCollider HawkEyeCollider;   
+    public float HawkEyeTimer = 10f;
+    public bool isHawkEyeReady = true;
+    public bool isHawkEyeActive = false;
 
     public static PlayerMovement Instance;
 
     private void Awake() => Instance = this;
+
+    private void Start() {
+        HawkEyeCollider.enabled = false;
+    }
 
     public bool GroundCheck()
     {
@@ -117,8 +125,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void HawkEye(){
+    public void HawkEyeSkill(){
+
+        if(inputs.GetHawkEyeInput() && isHawkEyeReady && !isHawkEyeActive){
+
+            print("HawkEye");
+            StartCoroutine(HawkEyeCourotine());
+        }
+    }
+    IEnumerator HawkEyeCourotine(){
         
+        isHawkEyeActive = true;
+        HawkEyeCollider.enabled = true;
+        print("HawkEye active");
+        yield return new WaitForSeconds(HawkEyeTimer);
+        HawkEyeCollider.enabled = false;
+        print("HawkEye desactive");
+        isHawkEyeActive = false;
     }
     public void Climb(){
 

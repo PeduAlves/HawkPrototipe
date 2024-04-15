@@ -12,6 +12,7 @@ public class PlayerInputs : MonoBehaviour
     private bool shootInput;
     private bool isCrouching;
     private bool hatSkillIput;
+    private bool hawkEyeInput;
     
     //recebe os inputs do jogador
        private void Update(){
@@ -24,6 +25,7 @@ public class PlayerInputs : MonoBehaviour
         shootInput = Input.GetButton("Fire1");
         hatSkillIput = Input.GetButton("Fire2");
         isCrouching = Input.GetButton("Crouch");
+        hawkEyeInput = Input.GetButton("HawkEye");
     }
 
     //Funcoes de retorno dos inputs
@@ -52,5 +54,8 @@ public class PlayerInputs : MonoBehaviour
     }
     public bool GetCrouchInput(){
         return isCrouching;
+    }
+    public bool GetHawkEyeInput(){
+        return hawkEyeInput;
     }
 }

@@ -23,7 +23,7 @@ public class BaseRevolver : MonoBehaviour
         balasNoTambor = qntBullet;
     }
 
-    public void PlayerShoot(){
+    public virtual void PlayerShoot(){
         
         if(balasNoTambor > 0){
             
@@ -41,7 +41,7 @@ public class BaseRevolver : MonoBehaviour
         }
     }
 
-    IEnumerator Reload(){
+    protected virtual IEnumerator Reload(){
         
         isReloading = true;
         yield return new WaitForSeconds(reloadTime);
@@ -49,7 +49,7 @@ public class BaseRevolver : MonoBehaviour
         isReloading = false;
     }
 
-    IEnumerator Shoot(){
+    protected virtual IEnumerator Shoot(){
 
         GameObject bullet = objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
 

@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
         playerMovement.Aim();   
         playerMovement.Walk();
         playerMovement.Jump();
+        playerMovement.HawkEyeSkill();
         hatSkill.HatSkill();
         
         //calcula o tempo para o próximo tiro
