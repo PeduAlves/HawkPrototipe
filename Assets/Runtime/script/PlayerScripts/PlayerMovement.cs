@@ -139,6 +139,11 @@ public class PlayerMovement : MonoBehaviour
         HawkEyeCollider.enabled = true;
         print("HawkEye active");
         yield return new WaitForSeconds(HawkEyeTimer);
+        StopHawkEye();
+    }
+    public void StopHawkEye(){
+
+        StopCoroutine(HawkEyeCourotine());
         HawkEyeCollider.enabled = false;
         print("HawkEye desactive");
         isHawkEyeActive = false;
