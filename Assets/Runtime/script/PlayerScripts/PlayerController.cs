@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public PlayerMovement playerMovement;
     public BaseRevolver revolver;
     public PlayerInputs inputs; 
+    public BaseHatSkill hatSkill;
     public float nextFireTime = 0.01f;
     public float fireRate = 0.5f;
     public float nextDashTime = 0.01f;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         playerMovement.Aim();   
         playerMovement.Walk();
         playerMovement.Jump();
+        hatSkill.HatSkill();
         
         //calcula o tempo para o próximo tiro
         if(inputs.GetShootInput() && Time.time >= nextFireTime){
