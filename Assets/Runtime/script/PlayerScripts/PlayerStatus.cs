@@ -44,8 +44,10 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
 
         if(LastBackPoint == null){
             backPoint = new Vector3(0,0,0);
+        }else{
+
+            backPoint = LastBackPoint.transform.position;
         }
-        backPoint = LastBackPoint.transform.position;
         yield return new WaitForSeconds(timeToBackPoint);
         controller.enabled = false;
         transform.position = backPoint;
