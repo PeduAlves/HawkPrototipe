@@ -148,4 +148,8 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
+    public Transform GetTransform()
+    {
+        return transform;
+    }
 }

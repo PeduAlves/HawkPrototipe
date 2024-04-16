@@ -9,7 +9,7 @@ public class BaseRevolver : MonoBehaviour
     public int qntBullet = 6;
     public int balasNoTambor;
     public Transform bulletSpawn;
-    ObjectPooler objectPooler;
+    private ObjectPooler objectPooler;
     public PlayerInputs inputs;
     public PlayerMovement movement;
     public float reloadTime = 1.5f;

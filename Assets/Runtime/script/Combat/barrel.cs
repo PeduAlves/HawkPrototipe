@@ -48,4 +48,8 @@ public class barrel : MonoBehaviour, IDamageable
             }
         }
     }
+
+    public Transform GetTransform(){
+        return transform;
+    }
 }
