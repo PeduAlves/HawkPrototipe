@@ -48,3 +48,6 @@ MonoBehaviour:
   - tag: Bullet
     prefab: {fileID: 6328075906977270725, guid: d6f053dd405454942a423fee9e8ebc9e, type: 3}
     size: 10
+  - tag: HawkBullet
+    prefab: {fileID: 6328075906977270725, guid: fa633cf4cce5b4d4798708fe6ef8b346, type: 3}
+    size: 10
