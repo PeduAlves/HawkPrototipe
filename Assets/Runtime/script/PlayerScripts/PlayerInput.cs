@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour
-{
+{   
+    public static PlayerInputs Instance;
+    private void Awake()=>Instance = this;
     private float rawHorizontalInput;
     private bool UpInput;
     private bool jumpInput;

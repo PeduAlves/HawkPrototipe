@@ -5,7 +5,6 @@ using UnityEngine;
 public class BaseHatSkill : MonoBehaviour
 {
     public BaseRevolver gun;
-    public PlayerInputs inputs;
     public float hatSkillCooldown = 10f;
     public float WaitForSeconds = 0.2f;
     private bool isHatSkill = false;
@@ -13,7 +12,7 @@ public class BaseHatSkill : MonoBehaviour
 
     public virtual void HatSkill(){
         
-        if(inputs.GetHatSkillInput() && !isHatSkill){
+        if(PlayerInputs.Instance.GetHatSkillInput() && !isHatSkill){
 
             StartCoroutine(hatSkillCourotine());
         }

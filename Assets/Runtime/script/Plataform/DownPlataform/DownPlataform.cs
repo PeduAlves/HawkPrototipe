@@ -17,7 +17,7 @@ public class DownPlataform : MonoBehaviour
     }
     private void Update()
     {
-        if (checkPlayerTop.IsPlayerOnPlatform() && Input.GetKeyDown(KeyCode.S)){
+        if (checkPlayerTop.IsPlayerOnPlatform() && PlayerInputs.Instance.GetCrouchInput()){
             
             StartCoroutine(wait()); 
             boxCollider.isTrigger = true; 

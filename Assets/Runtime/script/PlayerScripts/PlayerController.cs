@@ -14,6 +14,9 @@ public class PlayerController : MonoBehaviour
     public float dashRate = 1f;
     private bool isDash = false;
     private bool airDash = true;
+    
+    public static PlayerController Instance;
+    private void Awake()=>Instance = this;
 
     private void Update() {
 

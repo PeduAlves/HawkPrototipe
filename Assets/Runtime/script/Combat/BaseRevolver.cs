@@ -10,8 +10,6 @@ public class BaseRevolver : MonoBehaviour
     public int balasNoTambor;
     public Transform bulletSpawn;
     private ObjectPooler objectPooler;
-    public PlayerInputs inputs;
-    public PlayerMovement movement;
     public float reloadTime = 1.5f;
     private bool isReloading;
     private float yAxisShoot;
@@ -55,18 +53,15 @@ public class BaseRevolver : MonoBehaviour
 
         if (bullet != null){
             
-            // Configurar a posição e outras propriedades do projétil
             bullet.transform.position = bulletSpawn.position;
             bullet.transform.rotation = bulletSpawn.rotation;
 
-            // Obter o componente Bullet para configurar as forças do eixo Y e Z
             Bullet bulletScript = bullet.GetComponent<Bullet>();
 
             if (bulletScript != null){
 
                 bulletScript.SetForces(yAxisShoot, zAxisShoot);
             }
-            // Ativar o objeto para começar o tiro
             bullet.SetActive(true);
         }
 
@@ -75,13 +70,13 @@ public class BaseRevolver : MonoBehaviour
 
     private void calculateShootDirection(){
         
-        if(inputs.GetUpInput()) yAxisShoot = 1;
+        if(PlayerInputs.Instance.GetUpInput()) yAxisShoot = 1;
         else yAxisShoot = 0;
 
-        if(movement.facingRight) zAxisShoot = 1;
+        if(PlayerMovement.Instance.facingRight) zAxisShoot = 1;
         else zAxisShoot = -1;
 
-        if(inputs.GetUpInput() && (inputs.GetHorizontalInput() == 0f)){
+        if(PlayerInputs.Instance.GetUpInput() && (PlayerInputs.Instance.GetHorizontalInput() == 0f)){
 
             yAxisShoot = 1;
             zAxisShoot = 0;

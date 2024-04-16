@@ -5,20 +5,18 @@ using UnityEngine;
 
 public class Vines : MonoBehaviour
 {
-    public PlayerInputs inputs;
-    public PlayerMovement playerMovement;
 
     private void OnTriggerStay(Collider other) {
     
         if( other.gameObject.tag == "Player" ){
 
-            if(inputs.GetUpInput()){
+            if(PlayerInputs.Instance.GetUpInput()){
 
-                playerMovement.Climb();
+                PlayerMovement.Instance.Climb();
             }
-            if(inputs.GetCrouchInput()){
+            if(PlayerInputs.Instance.GetCrouchInput()){
 
-                playerMovement.noClimb();
+                PlayerMovement.Instance.noClimb();
             }
         }
    }
@@ -26,7 +24,7 @@ public class Vines : MonoBehaviour
 
        if( other.gameObject.tag == "Player" ){
            
-           playerMovement.noClimb();
+           PlayerMovement.Instance.noClimb();
        }
    }
 }

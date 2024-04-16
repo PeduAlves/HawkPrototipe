@@ -11,24 +11,20 @@ public class HawkEye : MonoBehaviour
     public int baseDamage = 4;
     public int damageGrowth = 4; 
     public PlayerInputs inputs;
-    public PlayerMovement playerMovement;
     private ObjectPooler objectPooler;
     private HawkEyeBullet hawkEyeBullet;
-    private GameObject enemyObject;
 
     private void Start(){
 
         objectPooler = ObjectPooler.Instance;
     }
-    
-
     private void OnEnable(){
 
         damage = 0;
         enemiesInRange.Clear();
     }
-    private void OnTriggerEnter(Collider other)
-    {
+    private void OnTriggerEnter(Collider other){
+
         if (other.CompareTag("Enemy"))
         {
             IDamageable enemy = other.GetComponent<IDamageable>();
@@ -49,7 +45,6 @@ public class HawkEye : MonoBehaviour
             }
         }
     }
-
     private void OnTriggerStay(Collider other) {
 
         StartCoroutine(IncreaseDamage());
@@ -59,16 +54,14 @@ public class HawkEye : MonoBehaviour
                 HawkEyeShoot( enemy );
             }
 
-            playerMovement.StopHawkEye();
+            PlayerMovement.Instance.StopHawkEye();
         }
     }
-
     IEnumerator IncreaseDamage(){
         
         damage += damageGrowth;
         yield return new WaitForSeconds(1f);
     }
-
     IEnumerator HawkEyeShoot( IDamageable enemy){
 
         GameObject hawkBullet = objectPooler.SpawnFromPool("HawkBullet", BulletSpawn.position, BulletSpawn.transform.rotation);

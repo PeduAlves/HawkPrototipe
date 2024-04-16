@@ -11,6 +11,9 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     public float timeToBackPoint = 0.5f;
     private Vector3 backPoint;
 
+    public static PlayerStatus Instance;
+    private void Awake()=>Instance = this;
+
     private void Start() {
         
         health = maxHealth;

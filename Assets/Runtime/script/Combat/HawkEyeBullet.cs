@@ -21,7 +21,7 @@ public class HawkEyeBullet : MonoBehaviour
 
         if (damageable.ID == enemyTarget.ID){
 
-            damageable.TakeHit(damage, damageable.ID);
+            GameEvents.Instance.TakeHitEvent(damage, damageable.ID);
             gameObject.SetActive(false);
         }       
     }

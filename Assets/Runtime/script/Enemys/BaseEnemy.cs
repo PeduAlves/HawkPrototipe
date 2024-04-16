@@ -40,7 +40,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         state = enemyStates.PATROL;
         GameEvents.Instance.TakeHit += TakeHit;
         if(patrolPoints.Length == 0) state = enemyStates.FOLLOW;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = PlayerMovement.Instance.transform;
     }
 
     private void Update(){

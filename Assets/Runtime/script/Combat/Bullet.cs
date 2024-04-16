@@ -11,7 +11,6 @@ public class Bullet : MonoBehaviour, IPooledObject
     public float zAxisForce;
     public Rigidbody rb;
     private Vector3 shootDirection; 
-    public PlayerInputs PlayerInputs;
     
     public void OnObjectSpawn(){
         
@@ -30,7 +29,7 @@ public class Bullet : MonoBehaviour, IPooledObject
 
         if (damageable != null){
 
-            damageable.TakeHit(damage, damageable.ID);
+           GameEvents.Instance.TakeHitEvent(damage, damageable.ID);
         }
 
         gameObject.SetActive(false);
@@ -43,7 +42,6 @@ public class Bullet : MonoBehaviour, IPooledObject
     }
     public void SetForces(float yAxis, float zAxis){
 
-        // Configurar as forças do eixo Y e Z para serem usadas na direção da bala
         yAxisForce = yAxis;
         zAxisForce = zAxis;
     }
