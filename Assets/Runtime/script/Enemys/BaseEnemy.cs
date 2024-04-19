@@ -93,6 +93,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
             collider.enabled = false;
         }
+        GameEvents.Instance.PlayerAddKillStreakEvent();
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }

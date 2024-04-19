@@ -9,8 +9,12 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     public GameObject LastBackPoint;
     public CharacterController controller;
     public float timeToBackPoint = 0.5f;
+    public float runSpeed = 1.5f;
+    public float normalSpeed = 1f;
+    public float runWaitTime = 15f;
+    public int killStreak = 0;
     private Vector3 backPoint;
-
+    private Coroutine currentKillStreakCoroutine;
     public static PlayerStatus Instance;
     private void Awake()=>Instance = this;
 
@@ -20,6 +24,7 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
         GameEvents.Instance.PlayerTakeDamage += PlayerTakeDamage;
         GameEvents.Instance.PlayerHeal += PlayerHeal;
         GameEvents.Instance.PlayerReturnPoint += ReturnBackPoint;
+        GameEvents.Instance.PlayerAddKillStreak += AddKillStreak;
     }
 
     public void PlayerTakeDamage(int ammountDamage){
@@ -40,10 +45,10 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
         }
     }
     public void ReturnBackPoint(){
-        StartCoroutine(ReturnBackPointCourotine());
+        StartCoroutine(ReturnBackPointCoroutine());
     }
 
-    IEnumerator ReturnBackPointCourotine(){
+    IEnumerator ReturnBackPointCoroutine(){
 
         if(LastBackPoint == null){
             backPoint = new Vector3(0,0,0);
@@ -61,6 +66,37 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
         
         GameEvents.Instance.PlayerTakeDamage -= PlayerTakeDamage;
         GameEvents.Instance.PlayerHeal -= PlayerHeal;
+        GameEvents.Instance.PlayerReturnPoint -= ReturnBackPoint;
+        GameEvents.Instance.PlayerAddKillStreak -= AddKillStreak;
+    }
+
+    public void AddKillStreak(){
+
+        killStreak++;
+        print("killStreak: "+ killStreak);
+
+        if(killStreak >= 3){
+        
+            print("run");
+            PlayerMovement.Instance.speedScale = runSpeed;
+        }
+        if(currentKillStreakCoroutine != null){
+
+            StopCoroutine(currentKillStreakCoroutine);
+        }
+        currentKillStreakCoroutine = StartCoroutine(killStreakCoroutine());
+    }
+
+    IEnumerator killStreakCoroutine(){
+        print("killStreakCoroutine");
+
+        yield return new WaitForSeconds(runWaitTime);
+        print("normal");
+        killStreak = 0;
+        PlayerMovement.Instance.speedScale = normalSpeed;
+
+        currentKillStreakCoroutine = null;
+
     }
 
 }

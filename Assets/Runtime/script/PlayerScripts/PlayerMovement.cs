@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerInputs inputs;
     public CharacterController controller;
     public float speed = 12f;
+    public float speedScale = 1f;
     public float gravity = -19.62f;
     public float gravityScale = 1f;
     public float jumpHeight = 5f;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float climbSpeed = 10f;
     public bool facingRight = true;
     private bool isClimb = false; 
+    private bool isDash = false;
     public float waitClimb = 0.3f;
     public BoxCollider HawkEyeCollider;   
     public float HawkEyeTimer = 10f;
@@ -65,31 +67,33 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Walk(){
+        
+        if(isDash) return;
 
-    float horizontalInput = inputs.GetHorizontalInput();
-    int UpInput = inputs.GetUpInput() ? 1 : 0;
+        float horizontalInput = inputs.GetHorizontalInput();
+        int UpInput = inputs.GetUpInput() ? 1 : 0;
 
-    //função para verificar a direção que o personagem está olhando
-    if (horizontalInput > 0){
+        //função para verificar a direção que o personagem está olhando
+        if (horizontalInput > 0){
 
-        facingRight = true;
+            facingRight = true;
+        }
+        else if (horizontalInput < 0){
+
+            facingRight = false;
+        }
+
+        //função para rotacionar o personagem
+        if (horizontalInput != 0){
+
+            Vector3 moveDirection = new Vector3(0,UpInput,horizontalInput);
+            transform.rotation = Quaternion.LookRotation(moveDirection);
+        }
+
+        //função para mover o personagem
+        Vector3 horizontalMove = new Vector3(0,0, horizontalInput);
+        controller.Move(horizontalMove * Time.deltaTime * speed * speedScale);
     }
-    else if (horizontalInput < 0){
-
-        facingRight = false;
-    }
-
-    //função para rotacionar o personagem
-    if (horizontalInput != 0){
-
-        Vector3 moveDirection = new Vector3(0,UpInput,horizontalInput);
-        transform.rotation = Quaternion.LookRotation(moveDirection);
-    }
-
-    //função para mover o personagem
-    Vector3 horizontalMove = new Vector3(0,0, horizontalInput);
-    controller.Move(horizontalMove * Time.deltaTime * speed);
-}
 
     public void Crouch(){
 
@@ -106,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
 
     public IEnumerator Dash(){
         
+        isDash = true;
         float dashSide = facingRight ? 1 : -1;
         float atualTime = 0;
         while(atualTime <= dashTime){
@@ -113,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
             atualTime += Time.deltaTime;
             yield return null;
         }
+        isDash = false;
         yield return new WaitForSeconds(0.5f);   
        
     }
