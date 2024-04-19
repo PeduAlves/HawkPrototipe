@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
 
+        PlayerStatus.Instance.RestartGame();   
         playerMovement.Aim();   
         playerMovement.Walk();
         playerMovement.Jump();
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-           
+
         playerMovement.PlayerGravity();
         playerMovement.Crouch();
 

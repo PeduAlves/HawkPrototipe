@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MonoBehaviour, IDamageablePlayer
-{
+{   
+    public bool isDie = false;
     public int health = 30;
     public int maxHealth = 30;
     public GameObject LastBackPoint;
@@ -27,13 +30,21 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
         GameEvents.Instance.PlayerAddKillStreak += AddKillStreak;
     }
 
+    public void RestartGame(){
+
+        if(PlayerInputs.Instance.GetShootInput() && isDie){
+            print("restart");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1;
+        }
+    }
+
     public void PlayerTakeDamage(int ammountDamage){
 
         health -= ammountDamage;
         print("player take damage" + ammountDamage + " health: " + health);
         if(health <= 0){
            Die();
-           Time.timeScale = 0;
         }
     }
 
@@ -63,21 +74,20 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     }
 
     public void Die(){
-        
+
+        Time.timeScale = 0;
         GameEvents.Instance.PlayerTakeDamage -= PlayerTakeDamage;
         GameEvents.Instance.PlayerHeal -= PlayerHeal;
         GameEvents.Instance.PlayerReturnPoint -= ReturnBackPoint;
         GameEvents.Instance.PlayerAddKillStreak -= AddKillStreak;
+        isDie = true;
     }
 
     public void AddKillStreak(){
 
         killStreak++;
-        print("killStreak: "+ killStreak);
-
         if(killStreak >= 3){
-        
-            print("run");
+
             PlayerMovement.Instance.speedScale = runSpeed;
         }
         if(currentKillStreakCoroutine != null){
@@ -88,15 +98,11 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     }
 
     IEnumerator killStreakCoroutine(){
-        print("killStreakCoroutine");
 
         yield return new WaitForSeconds(runWaitTime);
-        print("normal");
         killStreak = 0;
         PlayerMovement.Instance.speedScale = normalSpeed;
 
         currentKillStreakCoroutine = null;
-
     }
-
 }
