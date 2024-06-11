@@ -9,7 +9,6 @@ public enum enemyStates{
 public class BaseEnemy : MonoBehaviour, IDamageable
 {
 
-    public Transform player;
     public LayerMask whatIsGround, whatIsPlayer;
     public float attackRange = 5f;
     public float enemySpeed = 10f;
@@ -20,6 +19,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     public GameObject gun;
     public Transform []patrolPoints;
     
+    private Transform player;
     private int currentPatrolIndex = 0;
     private float enemyLife;
     private bool isDie = false;
