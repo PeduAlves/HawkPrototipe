@@ -29,12 +29,12 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
     public int ID { get; private set; }
     private static int lastAssignedID = 0;
-    private void Awake(){
+    protected private void Awake(){
 
         ID = lastAssignedID++;
     }
 
-    private void Start(){
+    protected private void Start(){
         
         enemyLife = enemyMaxLife;
         state = enemyStates.PATROL;
@@ -43,7 +43,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         player = PlayerMovement.Instance.transform;
     }
 
-    private void Update(){
+    protected private void Update(){
             
         switch(state){
             case enemyStates.DIE:
