@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyMerg : BaseEnemy
 {
-    
+
     private bool isAttacking = false;
     private Transform playerTransform= PlayerController.Instance.transform;
-    
+
 
     protected override IEnumerator Attack(){
         isAttacking = true;
