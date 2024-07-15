@@ -34,7 +34,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         ID = lastAssignedID++;
     }
 
-    protected private void Start(){
+    protected private virtual void Start(){
         
         enemyLife = enemyMaxLife;
         state = enemyStates.PATROL;
@@ -43,7 +43,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         player = PlayerMovement.Instance.transform;
     }
 
-    protected private void Update(){
+    protected private virtual void Update(){
             
         switch(state){
             case enemyStates.DIE:
@@ -103,7 +103,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
            
             currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
         }
-
+    
         transform.LookAt(new Vector3(patrolPoints[currentPatrolIndex].position.x, transform.position.y, patrolPoints[currentPatrolIndex].position.z));
         transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPatrolIndex].position, patrolSpeed * Time.deltaTime);
         yield return null;        
