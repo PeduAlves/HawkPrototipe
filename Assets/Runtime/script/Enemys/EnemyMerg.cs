@@ -1,27 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMerg : BaseEnemy
 {
+    protected override void Update(){
 
-    private bool mergIsAttacking = false;
-    private Transform playerTransform;
-  
-    private protected override void Start()
+        switch(state){
+            case enemyStates.DIE:
+                break;
+
+            case enemyStates.PATROL:
+                if (playerInSight) state = enemyStates.FOLLOW;
+                else StartCoroutine(Patrol());
+            break;
+
+            case enemyStates.FOLLOW:
+                if(!playerInSight)state = enemyStates.FOLLOW;
+                else Follow();
+            break;
+
+            case enemyStates.ATTACK:
+                if(!playerInSight) state = enemyStates.FOLLOW;
+                if(PlayerInAttackRange() && !isAttacking) StartCoroutine(Attack());
+                else Follow();
+            break;
+        }
+    }
+    protected override void Follow()
     {
-        base.Start();
-        playerTransform = PlayerController.Instance.transform;
-    }
-    protected override IEnumerator Attack(){
-        mergIsAttacking = true;
-        // Implementação específica para o EnemyMerg
-        Debug.Log("EnemyMerg is attacking");
-        yield return new WaitForSeconds(attackDelay);
-        // Código adicional para o ataque, se necessário
-        mergIsAttacking = false;   
+        base.Follow();
+        print ("Following");
     }
 
-    
+    protected override IEnumerator Attack()
+    {
+        yield return base.Attack();
+        print ("Attacking");
+    }
+
+
 
 }

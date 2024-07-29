@@ -19,22 +19,22 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     public GameObject gun;
     public Transform []patrolPoints;
     
-    private Transform player;
-    private int currentPatrolIndex = 0;
-    private float enemyLife;
-    private bool isDie = false;
-    private bool isAttacking = false;
-    private bool playerInSight = false;
-    private enemyStates state;
+    protected Transform player;
+    protected int currentPatrolIndex = 0;
+    protected float enemyLife;
+    protected bool isDie = false;
+    protected bool isAttacking = false;
+    protected bool playerInSight = false;
+    public enemyStates state;
 
-    public int ID { get; private set; }
-    private static int lastAssignedID = 0;
-    protected private void Awake(){
+    public int ID { get; protected set; }
+    protected static int lastAssignedID = 0;
+    protected void Awake(){
 
         ID = lastAssignedID++;
     }
 
-    protected private virtual void Start(){
+    protected virtual void Start(){
         
         enemyLife = enemyMaxLife;
         state = enemyStates.PATROL;
@@ -43,7 +43,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         player = PlayerMovement.Instance.transform;
     }
 
-    protected private virtual void Update(){
+    protected  virtual void Update(){
             
         switch(state){
             case enemyStates.DIE:
@@ -67,7 +67,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
         }
     }
-    private protected virtual void Follow(){
+    protected virtual void Follow(){
         if(PlayerInAttackRange()){ 
             
             state = enemyStates.ATTACK;
@@ -126,25 +126,25 @@ public class BaseEnemy : MonoBehaviour, IDamageable
             }
         }      
     }
-    private void OnTriggerEnter(Collider other) {
+    protected void OnTriggerEnter(Collider other) {
 
         if (other.CompareTag("Player")) {
 
             playerInSight = true;
         }
     }
-    private void OnTriggerExit(Collider other) {
+    protected void OnTriggerExit(Collider other) {
         
         if (other.CompareTag("Player")) {
             
             playerInSight = false;
         }
     } 
-    private bool PlayerInAttackRange(){
+    protected bool PlayerInAttackRange(){
         
         return Vector3.Distance(transform.position, player.position) <= attackRange;
     }
-    private void OnDrawGizmos() {
+    protected void OnDrawGizmos() {
         
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
