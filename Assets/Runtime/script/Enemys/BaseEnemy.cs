@@ -9,7 +9,6 @@ public enum enemyStates{
 public class BaseEnemy : MonoBehaviour, IDamageable
 {
 
-    public LayerMask whatIsGround, whatIsPlayer;
     public float attackRange = 5f;
     public float enemySpeed = 10f;
     public float patrolSpeed = 4f;

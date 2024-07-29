@@ -30,8 +30,14 @@ public class EnemyMerg : BaseEnemy
     }
     protected override void Follow()
     {
-        base.Follow();
-        print ("Following");
+        if(PlayerInAttackRange()){ 
+            
+            state = enemyStates.ATTACK;
+            return;
+        }
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+        transform.position = Vector3.MoveTowards(transform.position, player.position, enemySpeed * Time.deltaTime);
+    
     }
 
     protected override IEnumerator Attack()
@@ -39,7 +45,4 @@ public class EnemyMerg : BaseEnemy
         yield return base.Attack();
         print ("Attacking");
     }
-
-
-
 }
