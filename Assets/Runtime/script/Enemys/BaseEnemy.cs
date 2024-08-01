@@ -67,7 +67,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         }
     }
     protected virtual void Follow(){
-        if(PlayerInAttackRange()){ 
+        if(PlayerInAttackRange() && !isAttacking){ 
             
             state = enemyStates.ATTACK;
             return;

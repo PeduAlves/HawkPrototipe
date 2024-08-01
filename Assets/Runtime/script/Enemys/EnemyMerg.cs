@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class EnemyMerg : BaseEnemy
 {
-    protected override IEnumerator Attack(){
+    // protected override IEnumerator Attack(){
 
-        isAttacking = true;
+    //     isAttacking = true;
+    //     print("EnemyMerg Attack");
 
-        yield return new WaitForSeconds(attackDelay);
+    //     state = enemyStates.FOLLOW;
+    //     yield return new WaitForSeconds(attackDelay);
 
-        isAttacking = false;
-    }
+    //     isAttacking = false;
+    //     print("EnemyMerg Attack End");
+    // }
+
 }
+
