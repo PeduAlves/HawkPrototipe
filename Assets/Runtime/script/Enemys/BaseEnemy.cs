@@ -19,6 +19,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     public Transform []patrolPoints;
     
     protected Transform player;
+    UnityEngine.Vector3 playerPosition;
     protected int currentPatrolIndex = 0;
     protected float enemyLife;
     protected bool isDie = false;
@@ -43,7 +44,9 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     }
 
     protected  virtual void Update(){
-            
+        
+        playerPosition = new UnityEngine.Vector3( player.position.x , transform.position.y, player.position.z);
+
         switch(state){
             case enemyStates.DIE:
                 break;
@@ -67,13 +70,14 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         }
     }
     protected virtual void Follow(){
+        
         if(PlayerInAttackRange() && !isAttacking){ 
             
             state = enemyStates.ATTACK;
             return;
         }
-        transform.LookAt(player.position);
-        transform.position = Vector3.MoveTowards(transform.position, player.position, enemySpeed * Time.deltaTime);
+        transform.LookAt(playerPosition);
+        transform.position = Vector3.MoveTowards(transform.position, playerPosition, enemySpeed * Time.deltaTime);
     }
     protected virtual IEnumerator Attack(){
         

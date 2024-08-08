@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1912992784921929014}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.181, y: 4.263, z: 0}
+  m_LocalPosition: {x: 0.181, y: 0.8660002, z: 0}
   m_LocalScale: {x: 1.3484286, y: 0.35106, z: 2.2489}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 7556123309825782553}
-  inputs: {fileID: 6578160486141127412}
   hatSkillCooldown: 10
   WaitForSeconds: 0.2
 --- !u!1 &2378031066820195382
@@ -183,13 +182,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 3.25
-  m_Radius: 0.75
+  m_Height: 4.07
+  m_Radius: 1.25
   m_SlopeLimit: 45
   m_StepOffset: 0
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 3, z: 0.2}
+  m_Center: {x: 0.12, y: -0.01, z: 0}
 --- !u!114 &5094212696158335761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +236,7 @@ MonoBehaviour:
   inputs: {fileID: 6578160486141127412}
   controller: {fileID: 1104524866830172891}
   speed: 20
+  speedScale: 1
   gravity: -19.62
   gravityScale: 1.8
   jumpHeight: 10
@@ -266,11 +266,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fdeda15c7e53340a8b6121ab856c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDie: 0
   health: 30
   maxHealth: 30
   LastBackPoint: {fileID: 0}
   controller: {fileID: 1104524866830172891}
   timeToBackPoint: 0.5
+  runSpeed: 1.5
+  normalSpeed: 1
+  runWaitTime: 15
+  killStreak: 0
 --- !u!1 &2703720693411715419
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +304,7 @@ Transform:
   m_GameObject: {fileID: 2703720693411715419}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.627, y: 3.16, z: 0.935}
+  m_LocalPosition: {x: 0.627, y: -0.23699975, z: 0.935}
   m_LocalScale: {x: 0.1, y: 0.41169006, z: 0.10000002}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -372,8 +377,6 @@ MonoBehaviour:
   qntBullet: 6
   balasNoTambor: 0
   bulletSpawn: {fileID: 6499752474271505428}
-  inputs: {fileID: 6578160486141127412}
-  movement: {fileID: 6858565628188696598}
   reloadTime: 1.5
 --- !u!1 &3777915930180415856
 GameObject:
@@ -576,6 +579,7 @@ GameObject:
   - component: {fileID: 1793697188489331756}
   - component: {fileID: 6467531685399508727}
   - component: {fileID: 7200712475509542260}
+  - component: {fileID: 6805174562338045693}
   m_Layer: 3
   m_Name: HawkEyeSigth
   m_TagString: Untagged
@@ -592,7 +596,7 @@ Transform:
   m_GameObject: {fileID: 7732638895425359986}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.45, z: -0.00000095368}
+  m_LocalPosition: {x: 0, y: 0.05300021, z: -0.00000095368}
   m_LocalScale: {x: 10.367894, y: 19.17868, z: 58.78221}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -686,7 +690,23 @@ MonoBehaviour:
   baseDamage: 10
   damageGrowth: 4
   inputs: {fileID: 6578160486141127412}
-  playerMovement: {fileID: 6858565628188696598}
+--- !u!114 &6805174562338045693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732638895425359986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1935a392efa284d4c97ac1d35682d28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletSpawn: {fileID: 6499752474271505428}
+  damage: 0
+  baseDamage: 10
+  damageGrowth: 4
+  inputs: {fileID: 6578160486141127412}
 --- !u!1 &8514872894213299595
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +732,7 @@ Transform:
   m_GameObject: {fileID: 8514872894213299595}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.297, z: 0.207}
+  m_LocalPosition: {x: 0, y: -2, z: 0.207}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -767,7 +787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19709a62db6ab444f84b2554a26dff6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.476
+      value: -1.9209999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 19709a62db6ab444f84b2554a26dff6c, type: 3}
       propertyPath: m_LocalPosition.z
