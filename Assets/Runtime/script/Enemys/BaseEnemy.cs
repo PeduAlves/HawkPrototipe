@@ -19,7 +19,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     public Transform []patrolPoints;
     
     protected Transform player;
-    UnityEngine.Vector3 playerPosition;
+    Vector3 playerPosition;
     protected int currentPatrolIndex = 0;
     protected float enemyLife;
     protected bool isDie = false;
@@ -28,7 +28,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     public enemyStates state;
 
     public int ID { get; protected set; }
-    protected static int lastAssignedID = 0;
+    public static int lastAssignedID = 0;
     protected void Awake(){
 
         ID = lastAssignedID++;
@@ -45,7 +45,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
     protected  virtual void Update(){
         
-        playerPosition = new UnityEngine.Vector3( player.position.x , transform.position.y, player.position.z);
+        playerPosition = new Vector3( player.position.x , transform.position.y, player.position.z);
 
         switch(state){
             case enemyStates.DIE:

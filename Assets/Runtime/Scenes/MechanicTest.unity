@@ -524,11 +524,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8377151309574368355, guid: 2554008d6447a2540b44e55f0c0b576e, type: 3}
   m_PrefabInstance: {fileID: 1643490815}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &204049820 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4590750343885881193, guid: 2b951b2149084bd419db77be577379ed, type: 3}
-  m_PrefabInstance: {fileID: 250434648799052199}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &206754200
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1728,6 +1723,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2323608175039355481, guid: 0ca4fd70ce1b7734c86775d830caefbe, type: 3}
   m_PrefabInstance: {fileID: 1656539316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &720055057 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2619353112665911762, guid: 2b951b2149084bd419db77be577379ed, type: 3}
+  m_PrefabInstance: {fileID: 250434648799052199}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &740301173 stripped
 Transform:
@@ -5430,11 +5430,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1125942784959059847, guid: 285c8a2ec58308841bfab8c69969c92f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.10984
+      value: 15.993912
       objectReference: {fileID: 0}
     - target: {fileID: 1125942784959059847, guid: 285c8a2ec58308841bfab8c69969c92f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.55379
+      value: 9.878995
       objectReference: {fileID: 0}
     - target: {fileID: 1125942784959059847, guid: 285c8a2ec58308841bfab8c69969c92f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5549,22 +5549,22 @@ PrefabInstance:
     - target: {fileID: 7326381960964295418, guid: ad71270a7b72a53468ac97c7b5d01a4f, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 204049820}
+      objectReference: {fileID: 720055057}
     - target: {fileID: 7326381960964295418, guid: ad71270a7b72a53468ac97c7b5d01a4f, type: 3}
       propertyPath: m_LookAt
       value: 
-      objectReference: {fileID: 204049820}
+      objectReference: {fileID: 720055057}
     - target: {fileID: 8384341366751737185, guid: ad71270a7b72a53468ac97c7b5d01a4f, type: 3}
       propertyPath: m_Name
       value: VirtualCameraOne
       objectReference: {fileID: 0}
     - target: {fileID: 8822093978045958605, guid: ad71270a7b72a53468ac97c7b5d01a4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.10984
+      value: 15.993912
       objectReference: {fileID: 0}
     - target: {fileID: 8822093978045958605, guid: ad71270a7b72a53468ac97c7b5d01a4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.55379
+      value: 9.878995
       objectReference: {fileID: 0}
     - target: {fileID: 8822093978045958605, guid: ad71270a7b72a53468ac97c7b5d01a4f, type: 3}
       propertyPath: m_LocalPosition.z

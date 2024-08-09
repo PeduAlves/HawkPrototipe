@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1474813153233669902
 Transform:
   m_ObjectHideFlags: 0
@@ -47,7 +47,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1372915654571845624, guid: caf48dd49f3cc0447ab31b6bc2dc1266, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6
+      value: -2.73
       objectReference: {fileID: 0}
     - target: {fileID: 2960437139593355832, guid: caf48dd49f3cc0447ab31b6bc2dc1266, type: 3}
       propertyPath: m_LocalPosition.y
@@ -55,7 +55,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960437139593355832, guid: caf48dd49f3cc0447ab31b6bc2dc1266, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 6.07
       objectReference: {fileID: 0}
     - target: {fileID: 4405080088289885888, guid: caf48dd49f3cc0447ab31b6bc2dc1266, type: 3}
       propertyPath: m_LocalPosition.x
@@ -97,9 +97,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6152791576854569588, guid: caf48dd49f3cc0447ab31b6bc2dc1266, type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6989311603346770047, guid: caf48dd49f3cc0447ab31b6bc2dc1266, type: 3}
       propertyPath: m_Name
       value: PointsOfPatrol
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989311603346770047, guid: caf48dd49f3cc0447ab31b6bc2dc1266, type: 3}
+      propertyPath: m_Layer
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8692490880184126980, guid: caf48dd49f3cc0447ab31b6bc2dc1266, type: 3}
+      propertyPath: m_Layer
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -137,6 +149,10 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 5056413501073463770}
+    - target: {fileID: 1987186347332246693, guid: d8dad7c22bff70a4c9de7e732e48c85d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5273871548436371138, guid: d8dad7c22bff70a4c9de7e732e48c85d, type: 3}
       propertyPath: m_Name
       value: BaseEnemy
@@ -180,6 +196,10 @@ PrefabInstance:
     - target: {fileID: 8084912829139467915, guid: d8dad7c22bff70a4c9de7e732e48c85d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8516134705976484170, guid: d8dad7c22bff70a4c9de7e732e48c85d, type: 3}
+      propertyPath: m_Mass
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

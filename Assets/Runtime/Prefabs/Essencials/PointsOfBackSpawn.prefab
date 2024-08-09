@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 27373513741480300}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: PointsOfBackSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7563667524067266643}
   - component: {fileID: 703272209833597630}
   - component: {fileID: 1402416217381624491}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: PointBackSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 7827991988449432070}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.67, z: 60.86}
+  m_LocalPosition: {x: 0, y: 8.87, z: 55.43}
   m_LocalScale: {x: 9.561427, y: 50.3119, z: 3.7742977}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,4 +150,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d46549e96caea445a36391bc2daf173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStatus: {fileID: 0}
