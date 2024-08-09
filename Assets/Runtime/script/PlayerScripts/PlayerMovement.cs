@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float HawkEyeTimer = 10f;
     public bool isHawkEyeReady = true;
     public bool isHawkEyeActive = false;
+    public GameObject model3D;
 
     public static PlayerMovement Instance;
 
@@ -87,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalInput != 0){
 
             Vector3 moveDirection = new Vector3(0,UpInput,horizontalInput);
-            transform.rotation = Quaternion.LookRotation(moveDirection);
+            model3D.transform.rotation = Quaternion.LookRotation(moveDirection);
         }
 
         //função para mover o personagem
