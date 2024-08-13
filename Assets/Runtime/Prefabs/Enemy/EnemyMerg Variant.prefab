@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.59
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.74
+      value: 26.2
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalRotation.w
@@ -55,6 +55,34 @@ PrefabInstance:
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917136335524393544, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917136335524393544, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Size.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917136335524393544, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Size.z
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917136335524393544, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917136335524393544, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917136335524393544, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3176125458051212798, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Name
@@ -99,20 +127,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde59c72aee267e43a8690c2ea930c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 20
-  enemySpeed: 10
+  attackRange: 16
+  enemySpeed: 8
   patrolSpeed: 4
-  attackDelay: 2
+  attackDelay: 30
   attackDistance: 2
   enemyMaxLife: 30
   gun: {fileID: 0}
   patrolPoints:
   - {fileID: 5661925211107652660}
   - {fileID: 8397863774863782388}
+  damage: 10
   state: 0
+  jumpDistance: 10
+  diveDistance: 10
+  jumpTime: 1
+  diveTime: 20
+  mergAttackDelay: 5
+  enemySigth: {fileID: 7675223385467597259}
 --- !u!4 &5661925211107652660 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8949773056096541722, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 3648137619333277742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7675223385467597259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6350945012373019109, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
   m_PrefabInstance: {fileID: 3648137619333277742}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8397863774863782388 stripped

@@ -38,13 +38,13 @@ public class EnemyMerg : BaseEnemy
 
         while (transform.position.y > player.position.y + 1f){
 
-            transform.position = UnityEngine.Vector3.Lerp(transform.position, player.position, (elapsedTime / diveTime));
+            transform.position = UnityEngine.Vector3.Lerp(transform.position, diveDirection, (elapsedTime / diveTime));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        yield return new WaitForSeconds(mergAttackDelay);
         state = enemyStates.PATROL;
+        yield return new WaitForSeconds(mergAttackDelay);
         isAttacking = false;
         enemySigth.SetActive(true);
         
