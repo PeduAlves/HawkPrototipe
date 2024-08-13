@@ -40,7 +40,7 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     }
 
     public void PlayerTakeDamage(int ammountDamage){
-
+        
         health -= ammountDamage;
         print("player take damage" + ammountDamage + " health: " + health);
         if(health <= 0){

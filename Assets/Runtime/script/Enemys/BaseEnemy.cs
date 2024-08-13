@@ -25,6 +25,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
     protected bool isDie = false;
     protected bool isAttacking = false;
     protected bool playerInSight = false;
+    public int damage = 10;
     public enemyStates state;
 
     public int ID { get; protected set; }
@@ -128,6 +129,14 @@ public class BaseEnemy : MonoBehaviour, IDamageable
                 StartCoroutine(die());
             }
         }      
+    }
+    protected void OnCollisionEnter(Collision other) {
+
+        if (other.gameObject.tag == "Player") {
+
+            GameEvents.Instance.PlayerTakeDamageEvent( damage );
+        }
+    
     }
     protected void OnTriggerEnter(Collider other) {
 
