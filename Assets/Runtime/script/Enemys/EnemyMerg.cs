@@ -16,15 +16,11 @@ public class EnemyMerg : BaseEnemy
 
         isAttacking = true;
         enemySigth.SetActive(false);
-
-        //Mover o inimigo para cima
         //float lookingAt = this.transform.rotation.y > 160 ? -1f : 1f;
-        UnityEngine.Vector3 attackDirection = new UnityEngine.Vector3(0, 1f, 0);
 
-        // Salto para cima
-        UnityEngine.Vector3 targetPosition = transform.position + (attackDirection * jumpDistance);
         float elapsedTime = 0f;
-
+        UnityEngine.Vector3 attackDirection = new UnityEngine.Vector3(0, 1f, 0);
+        UnityEngine.Vector3 targetPosition = transform.position + (attackDirection * jumpDistance);
         while (elapsedTime < jumpTime){
 
             transform.position = UnityEngine.Vector3.Lerp(transform.position, targetPosition, (elapsedTime / jumpTime));
@@ -32,10 +28,8 @@ public class EnemyMerg : BaseEnemy
             yield return null;
         }
 
-        //avançar para o player
-        UnityEngine.Vector3 diveDirection = player.position;
         elapsedTime = 0f;
-
+        UnityEngine.Vector3 diveDirection = player.position;
         while (transform.position.y > player.position.y + 1f){
 
             transform.position = UnityEngine.Vector3.Lerp(transform.position, diveDirection, (elapsedTime / diveTime));
@@ -43,10 +37,11 @@ public class EnemyMerg : BaseEnemy
             yield return null;
         }
 
-        state = enemyStates.PATROL;
+        state = enemyStates.FOLLOW;
+        playerInSight = false;
+        enemySigth.SetActive(true);
         yield return new WaitForSeconds(mergAttackDelay);
         isAttacking = false;
-        enemySigth.SetActive(true);
         
         print("EnemyMerg Attack End");
     }

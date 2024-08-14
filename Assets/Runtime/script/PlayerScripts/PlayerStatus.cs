@@ -16,6 +16,11 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     public float normalSpeed = 1f;
     public float runWaitTime = 15f;
     public int killStreak = 0;
+    public float framesSlowDown = 5f;
+    public float invulnerableTime = 2f;
+    public int invLayer = 22;
+    private string originalTag;
+    private int originalLayer;
     private Vector3 backPoint;
     private Coroutine currentKillStreakCoroutine;
     public static PlayerStatus Instance;
@@ -24,6 +29,8 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
     private void Start() {
         
         health = maxHealth;
+        originalTag = gameObject.tag;
+        originalLayer = gameObject.layer;
         GameEvents.Instance.PlayerTakeDamage += PlayerTakeDamage;
         GameEvents.Instance.PlayerHeal += PlayerHeal;
         GameEvents.Instance.PlayerReturnPoint += ReturnBackPoint;
@@ -46,6 +53,7 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
         if(health <= 0){
            Die();
         }
+        else StartCoroutine(TakeDamageCoroutine());
     }
 
     public void PlayerHeal(int ammountHeal){
@@ -95,6 +103,21 @@ public class PlayerStatus : MonoBehaviour, IDamageablePlayer
             StopCoroutine(currentKillStreakCoroutine);
         }
         currentKillStreakCoroutine = StartCoroutine(killStreakCoroutine());
+    }
+
+    IEnumerator TakeDamageCoroutine(){
+
+        Time.timeScale = 0.1f;
+        float slowdownDuration = framesSlowDown * Time.fixedDeltaTime;
+        yield return new WaitForSecondsRealtime(slowdownDuration);
+        Time.timeScale = 1f;
+
+        gameObject.tag = "PlayerInv";
+        gameObject.layer = invLayer;
+        yield return new WaitForSecondsRealtime(invulnerableTime);
+        gameObject.tag = originalTag;
+        gameObject.layer = originalLayer;
+        
     }
 
     IEnumerator killStreakCoroutine(){
