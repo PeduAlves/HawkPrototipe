@@ -6,6 +6,7 @@ TagManager:
   tags:
   - plataform
   - Enemy
+  - PlayerInv
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - Player
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -29,7 +30,7 @@ TagManager:
   - 
   - "N\xE3oAcertavel"
   - Colliders
-  - 
+  - PlayerInv
   - 
   - 
   - 

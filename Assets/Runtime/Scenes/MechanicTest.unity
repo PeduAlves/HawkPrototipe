@@ -4901,10 +4901,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15795326
@@ -4948,10 +4944,6 @@ PrefabInstance:
     - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Name
       value: BaseEnemy 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5257,10 +5249,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2378031066820195382, guid: 2b951b2149084bd419db77be577379ed, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2619353112665911762, guid: 2b951b2149084bd419db77be577379ed, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5300,10 +5288,6 @@ PrefabInstance:
     - target: {fileID: 2619353112665911762, guid: 2b951b2149084bd419db77be577379ed, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6858565628188696598, guid: 2b951b2149084bd419db77be577379ed, type: 3}
-      propertyPath: dashSpeed
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5357,6 +5341,18 @@ PrefabInstance:
     - target: {fileID: 2798810600971986720, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698362962140709853, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
+      propertyPath: mergAttackDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239124596862071164, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12.549873
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239124596862071164, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 7812434870731229235, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
       propertyPath: m_Name
