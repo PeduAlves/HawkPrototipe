@@ -5346,6 +5346,10 @@ PrefabInstance:
       propertyPath: mergAttackDelay
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5698362962140709853, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6239124596862071164, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
       propertyPath: m_LocalScale.z
       value: 12.549873
