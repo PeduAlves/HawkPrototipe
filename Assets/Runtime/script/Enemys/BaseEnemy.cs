@@ -77,6 +77,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
             state = enemyStates.ATTACK;
             return;
         }
+        if(isAttacking)return;
         transform.LookAt(playerPosition);
         transform.position = Vector3.MoveTowards(transform.position, playerPosition, enemySpeed * Time.deltaTime);
     }

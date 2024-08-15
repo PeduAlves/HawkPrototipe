@@ -10,6 +10,7 @@ public class BaseRevolver : MonoBehaviour
     public int balasNoTambor;
     public Transform bulletSpawn;
     private ObjectPooler objectPooler;
+    private string bulletTag = "Bullet";
     public float reloadTime = 1.5f;
     private bool isReloading;
     private float yAxisShoot;
@@ -49,7 +50,7 @@ public class BaseRevolver : MonoBehaviour
 
     protected virtual IEnumerator Shoot(){
 
-        GameObject bullet = objectPooler.SpawnFromPool("Bullet", bulletSpawn.position, bulletSpawn.rotation);
+        GameObject bullet = objectPooler.SpawnFromPool(bulletTag, bulletSpawn.position, bulletSpawn.rotation);
 
         if (bullet != null){
             
