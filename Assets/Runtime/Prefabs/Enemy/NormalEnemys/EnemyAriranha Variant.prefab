@@ -1,5 +1,124 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8367904594197532101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6162414116850227467}
+  - component: {fileID: 4305497583244754789}
+  - component: {fileID: 8193840929387097173}
+  - component: {fileID: 3192837142551748237}
+  - component: {fileID: 4105618327521942355}
+  m_Layer: 6
+  m_Name: AttackArea
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6162414116850227467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367904594197532101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.36, z: 0.78}
+  m_LocalScale: {x: 1.2687, y: 2.272876, z: 2.2088068}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3494689647946348669}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4305497583244754789
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367904594197532101}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &8193840929387097173
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367904594197532101}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 3a736f9027057524384817aa2ede1f26, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &3192837142551748237
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367904594197532101}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4105618327521942355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8367904594197532101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 493c0382019890948bc896feff1e422d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!1001 &1905162255908307522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,18 +185,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6441656783340433460, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2244782304427385820, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3030886550229891647, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6162414116850227467}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2486729873885207389}
   m_SourcePrefab: {fileID: 100100000, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
---- !u!1 &384898779249090974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2244782304427385820, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-  m_PrefabInstance: {fileID: 1905162255908307522}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &683507979602776116 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
@@ -95,18 +213,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e0fbe092454fb4a89d246a9758fb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5
+  attackRange: 4
   enemySpeed: 10
   patrolSpeed: 4
   attackDelay: 2
   attackDistance: 2
   enemyMaxLife: 30
-  gun: {fileID: 384898779249090974}
+  gun: {fileID: 0}
   patrolPoints:
   - {fileID: 7368880575821291096}
   - {fileID: 6655057667483802520}
   damage: 10
   state: 0
+  ariranhaAttackDelay: 1
+  attackTime: 0.75
+  enemySigth: {fileID: 4779278173201095591}
+  ariranhaAttackArea: {fileID: 8367904594197532101}
+--- !u!4 &3494689647946348669 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3030886550229891647, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 1905162255908307522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4779278173201095591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6350945012373019109, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 1905162255908307522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6655057667483802520 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5056413501073463770, guid: b194fe2b35ef10642b2460150334fd07, type: 3}

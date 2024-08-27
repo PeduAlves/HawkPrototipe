@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5055862833362461879
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 361748009190872952, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dcd27e16aa9abc94e9626ff94cde6893, type: 2}
+    - target: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Name
+      value: EnemySapo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.15795326
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_Name
+      value: EnemySapo Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6441656783340433460, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 2244782304427385820, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8285504880930637545}
+  m_SourcePrefab: {fileID: 100100000, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+--- !u!4 &551129118309741 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5056413501073463770, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 5055862833362461879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2164294780234972498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6350945012373019109, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 5055862833362461879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4186644890103609517 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8949773056096541722, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 5055862833362461879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6135653583880763073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 5055862833362461879}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8285504880930637545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6135653583880763073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f865d2e062ee81d40a9533274df03e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 5
+  enemySpeed: 10
+  patrolSpeed: 4
+  attackDelay: 2
+  attackDistance: 2
+  enemyMaxLife: 30
+  gun: {fileID: 0}
+  patrolPoints:
+  - {fileID: 4186644890103609517}
+  - {fileID: 551129118309741}
+  damage: 10
+  state: 0
+  sapoAttackDelay: 1
+  attackTime: 0.75
+  enemySigth: {fileID: 2164294780234972498}
+  sapoAttackArea: {fileID: 0}

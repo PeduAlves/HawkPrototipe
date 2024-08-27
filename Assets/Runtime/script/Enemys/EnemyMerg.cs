@@ -38,8 +38,6 @@ public class EnemyMerg : BaseEnemy
         enemySigth.SetActive(true);
         yield return new WaitForSeconds(mergAttackDelay);
         isAttacking = false;
-        
-        print("EnemyMerg Attack End");
     }
 }
 
