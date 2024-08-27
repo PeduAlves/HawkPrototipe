@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7867784162236217730
+--- !u!1001 &1905162255908307522
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -11,10 +11,10 @@ PrefabInstance:
     - target: {fileID: 361748009190872952, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: eb4f20381e4451643b8457dcbd190569, type: 2}
+      objectReference: {fileID: 2100000, guid: b7ce114baef769345b44298722b247c4, type: 2}
     - target: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Name
-      value: EnemyCagado
+      value: EnemyAriranha
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.02
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56,93 +56,64 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3030886550229891647, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3030886550229891647, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3030886550229891647, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3030886550229891647, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5056413501073463770, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
     - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Name
-      value: EnemyCagado Variant
+      value: EnemyAriranha Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8949773056096541722, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6441656783340433460, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-    m_RemovedGameObjects:
-    - {fileID: 2244782304427385820, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 470547626070718206}
+      addedObject: {fileID: 2486729873885207389}
   m_SourcePrefab: {fileID: 100100000, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
---- !u!4 &1232868299314275736 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8949773056096541722, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-  m_PrefabInstance: {fileID: 7867784162236217730}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &3099603854827823192 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5056413501073463770, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-  m_PrefabInstance: {fileID: 7867784162236217730}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3822688386779504743 stripped
+--- !u!1 &384898779249090974 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6350945012373019109, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-  m_PrefabInstance: {fileID: 7867784162236217730}
+  m_CorrespondingSourceObject: {fileID: 2244782304427385820, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 1905162255908307522}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &9089332885075487732 stripped
+--- !u!1 &683507979602776116 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
-  m_PrefabInstance: {fileID: 7867784162236217730}
+  m_PrefabInstance: {fileID: 1905162255908307522}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &470547626070718206
+--- !u!114 &2486729873885207389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9089332885075487732}
+  m_GameObject: {fileID: 683507979602776116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36dd9b91e0722604d8aed2fcdbb1d223, type: 3}
+  m_Script: {fileID: 11500000, guid: f7e0fbe092454fb4a89d246a9758fb96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 18
-  enemySpeed: 8
-  patrolSpeed: 2
+  attackRange: 5
+  enemySpeed: 10
+  patrolSpeed: 4
   attackDelay: 2
   attackDistance: 2
   enemyMaxLife: 30
-  gun: {fileID: 0}
+  gun: {fileID: 384898779249090974}
   patrolPoints:
-  - {fileID: 1232868299314275736}
-  - {fileID: 3099603854827823192}
+  - {fileID: 7368880575821291096}
+  - {fileID: 6655057667483802520}
   damage: 10
   state: 0
-  cagadoAttackDelay: 4
-  dashTime: 4
-  chargeTime: 1
-  enemySigth: {fileID: 3822688386779504743}
+--- !u!4 &6655057667483802520 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5056413501073463770, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 1905162255908307522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7368880575821291096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8949773056096541722, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 1905162255908307522}
+  m_PrefabAsset: {fileID: 0}

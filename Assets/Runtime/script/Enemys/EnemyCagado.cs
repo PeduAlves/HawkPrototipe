@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class EnemyCagado : BaseEnemy
 {   
-    public float cagadoAttackDelay = 0.5f;
     public float dashTime = 1f;
     public float chargeTime = 1.5f;
     public GameObject enemySigth;
 
     protected override IEnumerator Attack(){
-
         
         isAttacking = true;
         enemySigth.SetActive(false);
@@ -29,7 +27,5 @@ public class EnemyCagado : BaseEnemy
         state = enemyStates.FOLLOW;
         playerInSight = false;
         enemySigth.SetActive(true);
-        //yield return new WaitForSeconds( cagadoAttackDelay );
-        
     }
 }
