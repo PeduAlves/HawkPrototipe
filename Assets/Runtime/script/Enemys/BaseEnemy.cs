@@ -44,7 +44,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         player = PlayerMovement.Instance.transform;
     }
 
-    protected  virtual void Update(){
+    protected virtual void Update(){
         
         playerPosition = new Vector3( player.position.x , transform.position.y, player.position.z);
 

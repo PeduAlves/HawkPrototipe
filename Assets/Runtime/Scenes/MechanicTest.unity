@@ -3752,11 +3752,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 317944115831912086, guid: 9a91bc2b0a89c4748a0c5b940bd461a7, type: 3}
   m_PrefabInstance: {fileID: 901620272}
   m_PrefabAsset: {fileID: 0}
---- !u!54 &1570961211 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 7654383456958071113, guid: b7daa17152345e3488c05c78b0365ce2, type: 3}
-  m_PrefabInstance: {fileID: 1124615903315604030}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1603204830 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3836581064361698930, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
@@ -5307,6 +5302,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 551129118309741, guid: b7daa17152345e3488c05c78b0365ce2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.29
+      objectReference: {fileID: 0}
     - target: {fileID: 1792883162884162730, guid: b7daa17152345e3488c05c78b0365ce2, type: 3}
       propertyPath: m_Name
       value: EnemySapo
@@ -5350,14 +5349,6 @@ PrefabInstance:
     - target: {fileID: 5935074474553142201, guid: b7daa17152345e3488c05c78b0365ce2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8285504880930637545, guid: b7daa17152345e3488c05c78b0365ce2, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 1570961211}
-    - target: {fileID: 8285504880930637545, guid: b7daa17152345e3488c05c78b0365ce2, type: 3}
-      propertyPath: attackRange
-      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5415,10 +5406,6 @@ PrefabInstance:
     - target: {fileID: 7812434870731229235, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
       propertyPath: m_Name
       value: EnemyMerg
-      objectReference: {fileID: 0}
-    - target: {fileID: 7812434870731229235, guid: 2da5fdf4dca3a27408d087c10ad30048, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5672,10 +5659,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyAriranha
       objectReference: {fileID: 0}
-    - target: {fileID: 4952815218455716447, guid: 2fefeaaf9a183a34ba61b1b664555b30, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5692,10 +5675,6 @@ PrefabInstance:
     - target: {fileID: 3739234313151879583, guid: 8343dcd5fb9e12a479681a977804aa52, type: 3}
       propertyPath: m_Name
       value: EnemyCagado
-      objectReference: {fileID: 0}
-    - target: {fileID: 3739234313151879583, guid: 8343dcd5fb9e12a479681a977804aa52, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8743856037110068876, guid: 8343dcd5fb9e12a479681a977804aa52, type: 3}
       propertyPath: m_LocalPosition.x
