@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2020365441039317146}
   - component: {fileID: 5294647795960177937}
   m_Layer: 20
-  m_Name: EnemyBullet
+  m_Name: BaseEnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletForce: 20
-  timeForDisable: 2
+  timeForDisable: 5
   damage: 10
   yAxisForce: 0
   zAxisForce: 1
