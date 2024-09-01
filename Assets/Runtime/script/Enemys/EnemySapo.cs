@@ -11,6 +11,7 @@ public class EnemySapo : BaseEnemy
     public float sapoAttackDelay = 0.5f;
     public GameObject enemySigth;
     private bool isGrounded = true;
+    public float groundCheckerHeight = 0.5f;
 
     protected override void Update() {
         
@@ -55,7 +56,7 @@ public class EnemySapo : BaseEnemy
     protected void groundChecker(){
 
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f)){
+        if(Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckerHeight)){
 
             isGrounded = true;
         }
