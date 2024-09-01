@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: fda383211a668fc438231a7d0e704ace, type: 2}
     - target: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Name
-      value: GunMergEnemy
+      value: GunJabutiEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.99
+      value: 32.7
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalRotation.w
@@ -149,7 +149,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4074837715264445128}
+      addedObject: {fileID: 1109856451160538667}
   m_SourcePrefab: {fileID: 100100000, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
 --- !u!4 &2136574483254550974 stripped
 Transform:
@@ -161,7 +161,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
   m_PrefabInstance: {fileID: 3995901111331622208}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4074837715264445128
+--- !u!114 &1109856451160538667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23912536d5e8a104f8d149ae15c043c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 15
+  attackRange: 5
   enemySpeed: 10
   patrolSpeed: 4
   attackDelay: 2
@@ -185,10 +185,10 @@ MonoBehaviour:
   - {fileID: 8169450188545168538}
   damage: 10
   state: 0
-  bulletPrefab: {fileID: 6328075906977270725, guid: 0b235ac3bf744824c9a806953ea35bfd, type: 3}
+  bulletPrefab: {fileID: 8035487561367490590, guid: 87a9fac46691a944ebd3b068158428ee, type: 3}
   bulletSpawn: {fileID: 4938118994810908402}
-  fireRate: 2
-  bulletInterval: 2
+  fireRate: 1
+  bulletInterval: 0.5
 --- !u!1 &2905766787615862428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2244782304427385820, guid: b194fe2b35ef10642b2460150334fd07, type: 3}

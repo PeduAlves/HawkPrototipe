@@ -10,9 +10,9 @@ public class EnemyBullet : MonoBehaviour
     public float yAxisForce = 0; 
     public float zAxisForce = -1;
     public Rigidbody rb;
-    private Vector3 shootDirection; 
+    protected Vector3 shootDirection; 
 
-    private void OnEnable() {
+    protected virtual void OnEnable() {
 
         StartCoroutine(DisableBullet());
         shootDirection = new Vector3(0, PlayerController.Instance.transform.position.y, PlayerController.Instance.transform.position.z) - transform.position;
@@ -35,7 +35,7 @@ public class EnemyBullet : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    IEnumerator DisableBullet(){
+    public IEnumerator DisableBullet(){
 
         yield return new WaitForSeconds(timeForDisable);
         Destroy(this.gameObject);
