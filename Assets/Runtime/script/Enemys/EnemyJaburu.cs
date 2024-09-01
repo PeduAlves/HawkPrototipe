@@ -2,25 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAriranha : BaseEnemy
+public class EnemyJaburu : BaseEnemy
 {
-    public float ariranhaAttackDelay = 1f;
+    public float jaburuAttackDelay = 1f;
     public float attackTime = 0.75f;
     public GameObject enemySigth;
-    public GameObject ariranhaAttackArea;
+    public GameObject jaburuAttackArea;
     protected override IEnumerator Attack(){
 
         isAttacking = true;
         enemySigth.SetActive(false);
-
-        ariranhaAttackArea.SetActive(true);
+        
+        jaburuAttackArea.SetActive(true);
         yield return new WaitForSeconds( attackTime );
-        ariranhaAttackArea.SetActive(false);
+        jaburuAttackArea.SetActive(false);
 
         playerInSight = false;
         state = enemyStates.FOLLOW;
         enemySigth.SetActive(true);
-        yield return new WaitForSeconds( ariranhaAttackDelay );
+        yield return new WaitForSeconds( jaburuAttackDelay );
         isAttacking = false;
     }
 }
