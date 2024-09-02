@@ -5669,7 +5669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3753437541725087573, guid: 2a6b01af9cf740b4d82d28675bd1d81e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 39.29
+      value: 42.49
       objectReference: {fileID: 0}
     - target: {fileID: 3753437541725087573, guid: 2a6b01af9cf740b4d82d28675bd1d81e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5799,7 +5799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4313900690620763523, guid: 6c234d15f802c2c4180c26b43191324d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30
+      value: 24.59
       objectReference: {fileID: 0}
     - target: {fileID: 4313900690620763523, guid: 6c234d15f802c2c4180c26b43191324d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5915,6 +5915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunSapoEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 630370892395819679, guid: 22dce336ec753ee478338b5928372111, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4756788062644116876, guid: 22dce336ec753ee478338b5928372111, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15795326
@@ -5925,7 +5929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4756788062644116876, guid: 22dce336ec753ee478338b5928372111, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.99
+      value: 11.36
       objectReference: {fileID: 0}
     - target: {fileID: 4756788062644116876, guid: 22dce336ec753ee478338b5928372111, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5978,7 +5982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2542994581639434828, guid: c1b2c01efac34764288153a6cf97656d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.7
+      value: 34.22
       objectReference: {fileID: 0}
     - target: {fileID: 2542994581639434828, guid: c1b2c01efac34764288153a6cf97656d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6016,10 +6020,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9147306266434995606, guid: c1b2c01efac34764288153a6cf97656d, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: eb4f20381e4451643b8457dcbd190569, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
