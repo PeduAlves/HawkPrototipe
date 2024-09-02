@@ -92,6 +92,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseMergEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2400392726752334158, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.0644152
+      objectReference: {fileID: 0}
+    - target: {fileID: 2400392726752334158, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.022
+      objectReference: {fileID: 0}
+    - target: {fileID: 2400392726752334158, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.761
+      objectReference: {fileID: 0}
     - target: {fileID: 2419241116776302479, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -133,6 +145,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4146838623879227682, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146838623879227682, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
+      propertyPath: attackRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146838623879227682, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
       propertyPath: patrolPoints.Array.data[0]
       value: 
       objectReference: {fileID: 6024233283794853527}
@@ -140,6 +160,14 @@ PrefabInstance:
       propertyPath: patrolPoints.Array.data[1]
       value: 
       objectReference: {fileID: 7602751441877031767}
+    - target: {fileID: 8045710067829990626, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 17.079546
+      objectReference: {fileID: 0}
+    - target: {fileID: 8045710067829990626, guid: ef3aca932a73c004eab76d7edb31e3c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.82
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

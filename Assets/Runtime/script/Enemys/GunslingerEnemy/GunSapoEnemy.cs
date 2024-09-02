@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
 
-public class EnemySapo : BaseEnemy
+public class GunSapoEnemy : BaseEnemy
 {
+    public GameObject bulletPrefab;
+    public Transform bulletSpawn;
+    public float fireRate = 1f;
+    public float bulletInterval = 0.5f;   
+    private float nextFire = 0f;
     public float launchAngle = 70f;
     public float gravity = -9.8f;
     public Rigidbody rb;
@@ -18,7 +22,6 @@ public class EnemySapo : BaseEnemy
         groundChecker();
         base.Update();
     }
-
     protected override IEnumerator Attack(){
         
         if(!isGrounded) yield break;
@@ -34,17 +37,22 @@ public class EnemySapo : BaseEnemy
         Vector3 velocityVector = direction.normalized * velocity * Mathf.Cos(launchAngleRad);
         velocityVector.y = velocity * Mathf.Sin(launchAngleRad);
         rb.velocity = velocityVector;
-        
-        //playerInSight = false;
+
+        for(int i = 0; i < 3; i++){
+            yield return new WaitForSeconds(sapoAttackDelay);
+            StartCoroutine(Shoot());
+        }       
+       
         state = enemyStates.FOLLOW;
         playerInSight = true;
         yield return new WaitForSeconds(sapoAttackDelay);
         isAttacking = false;
         playerInSight = false;
         enemySigth.SetActive(true);
+        
+
+    
     }
-
-
     protected void groundChecker(){
 
         RaycastHit hit;
@@ -53,5 +61,11 @@ public class EnemySapo : BaseEnemy
             isGrounded = true;
         }
         else isGrounded = false;
+    }
+    protected IEnumerator Shoot(){
+
+        gun.transform.LookAt(player);
+        Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        yield return new WaitForSeconds(bulletInterval);
     }
 }

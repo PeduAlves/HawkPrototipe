@@ -68,16 +68,79 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 582264166405868639, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5140971234897520850, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9008124881549429677}
   m_SourcePrefab: {fileID: 100100000, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
+--- !u!1 &3860866641290055374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 898257939383640897, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
+  m_PrefabInstance: {fileID: 4171403178922552719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &4729982820548621013 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8667049147139694426, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
+  m_PrefabInstance: {fileID: 4171403178922552719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5167955702009933076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9105021994392125595, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
   m_PrefabInstance: {fileID: 4171403178922552719}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &7143915045748943949 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6541344272601448898, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
+  m_PrefabInstance: {fileID: 4171403178922552719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8255250446051816695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5436767918934235512, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
+  m_PrefabInstance: {fileID: 4171403178922552719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9132080749095961949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5140971234897520850, guid: 46255bf49bc4904498266051a7d38fee, type: 3}
+  m_PrefabInstance: {fileID: 4171403178922552719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9008124881549429677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9132080749095961949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ec48c0505054f842b538a8d812f7c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 15
+  enemySpeed: 6
+  patrolSpeed: 4
+  attackDelay: 2
+  attackDistance: 2
+  enemyMaxLife: 30
+  gun: {fileID: 8255250446051816695}
+  patrolPoints:
+  - {fileID: 3046663264283299480}
+  - {fileID: 1179919462565972824}
+  damage: 10
+  state: 0
+  bulletPrefab: {fileID: 6328075906977270725, guid: 6a281cfe05391054cbd929ae86efa24b, type: 3}
+  bulletSpawn: {fileID: 7143915045748943949}
+  fireRate: 1
+  bulletInterval: 0.5
+  launchAngle: 70
+  gravity: -9.8
+  rb: {fileID: 4729982820548621013}
+  sapoAttackDelay: 0.5
+  enemySigth: {fileID: 3860866641290055374}
+  groundCheckerHeight: 3
 --- !u!1001 &8508814842866121433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9127359348713228358, guid: 2a6b01af9cf740b4d82d28675bd1d81e, type: 3}
       propertyPath: m_Name
-      value: GunSapoiEnemy Variant
+      value: GunSapoEnemy Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9127359348713228358, guid: 2a6b01af9cf740b4d82d28675bd1d81e, type: 3}
       propertyPath: m_IsActive

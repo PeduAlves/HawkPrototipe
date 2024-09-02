@@ -148,7 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletForce: 20
   timeForDisable: 5
-  damage: 10
+  damage: 5
   yAxisForce: 0
   zAxisForce: 1
   rb: {fileID: 5538839631933209233}

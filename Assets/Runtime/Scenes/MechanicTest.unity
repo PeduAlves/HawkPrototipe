@@ -5915,10 +5915,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GunSapoEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 630370892395819679, guid: 22dce336ec753ee478338b5928372111, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4756788062644116876, guid: 22dce336ec753ee478338b5928372111, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15795326
