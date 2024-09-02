@@ -42,10 +42,10 @@ PrefabInstance:
     - target: {fileID: 361748009190872952, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: eb4f20381e4451643b8457dcbd190569, type: 2}
+      objectReference: {fileID: 2100000, guid: fda383211a668fc438231a7d0e704ace, type: 2}
     - target: {fileID: 1372524868691284598, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Name
-      value: GunCagadoiEnemy
+      value: BaseGunEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.x
@@ -129,7 +129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7220707357607909714, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalScale.z
