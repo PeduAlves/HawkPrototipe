@@ -56,13 +56,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5056413501073463770, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.29
+      objectReference: {fileID: 0}
     - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_Name
       value: EnemySapo Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6441656783340433460, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
@@ -106,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f865d2e062ee81d40a9533274df03e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 5
+  attackRange: 14
   enemySpeed: 10
   patrolSpeed: 4
   attackDelay: 2
@@ -118,7 +122,14 @@ MonoBehaviour:
   - {fileID: 551129118309741}
   damage: 10
   state: 0
+  launchAngle: 70
+  gravity: -9.8
+  rb: {fileID: 7654383456958071113}
   sapoAttackDelay: 1
-  attackTime: 0.75
   enemySigth: {fileID: 2164294780234972498}
-  sapoAttackArea: {fileID: 0}
+  groundCheckerHeight: 0.5
+--- !u!54 &7654383456958071113 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3176125458051212798, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
+  m_PrefabInstance: {fileID: 5055862833362461879}
+  m_PrefabAsset: {fileID: 0}

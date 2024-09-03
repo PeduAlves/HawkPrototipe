@@ -44,7 +44,7 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         player = PlayerMovement.Instance.transform;
     }
 
-    protected  virtual void Update(){
+    protected virtual void Update(){
         
         playerPosition = new Vector3( player.position.x , transform.position.y, player.position.z);
 
@@ -64,7 +64,11 @@ public class BaseEnemy : MonoBehaviour, IDamageable
 
             case enemyStates.ATTACK:
                 if(!playerInSight) state = enemyStates.PATROL;
-                if(PlayerInAttackRange() && !isAttacking) StartCoroutine(Attack());
+                if(PlayerInAttackRange() && !isAttacking) {
+
+                    transform.LookAt(playerPosition);
+                    StartCoroutine(Attack());
+                }
                 else Follow();
             break;
 
@@ -94,9 +98,14 @@ public class BaseEnemy : MonoBehaviour, IDamageable
         transform.rotation = Quaternion.Euler(-90, 0, 0);
         isDie = true;
         Collider collider = GetComponent<Collider>();
+        Rigidbody rb = GetComponent<Rigidbody>();
         if (collider != null){
 
             collider.enabled = false;
+        }
+        if (rb != null){
+
+            rb.useGravity = true;
         }
         GameEvents.Instance.PlayerAddKillStreakEvent();
         yield return new WaitForSeconds(3f);

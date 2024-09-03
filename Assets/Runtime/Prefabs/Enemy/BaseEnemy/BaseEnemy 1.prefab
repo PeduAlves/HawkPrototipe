@@ -143,7 +143,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 153026681410772305, guid: d8dad7c22bff70a4c9de7e732e48c85d, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 241473183542211712, guid: d8dad7c22bff70a4c9de7e732e48c85d, type: 3}
       propertyPath: patrolPoints.Array.data[0]

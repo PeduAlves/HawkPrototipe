@@ -13,7 +13,6 @@ public class EnemyAriranha : BaseEnemy
         isAttacking = true;
         enemySigth.SetActive(false);
 
-        //logica de ataque da ariranha
         ariranhaAttackArea.SetActive(true);
         yield return new WaitForSeconds( attackTime );
         ariranhaAttackArea.SetActive(false);

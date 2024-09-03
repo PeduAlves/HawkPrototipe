@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8193840929387097173}
   - component: {fileID: 3192837142551748237}
   - component: {fileID: 4105618327521942355}
-  m_Layer: 6
+  m_Layer: 20
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.59
+      value: 3.45
       objectReference: {fileID: 0}
     - target: {fileID: 1474813153233669902, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6830713554339242013, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6441656783340433460, guid: b194fe2b35ef10642b2460150334fd07, type: 3}
