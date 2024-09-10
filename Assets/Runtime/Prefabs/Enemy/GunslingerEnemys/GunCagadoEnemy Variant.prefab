@@ -207,7 +207,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -221,15 +221,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2523102504054653518, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.15795326
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2523102504054653518, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.59
+      value: 15.7
       objectReference: {fileID: 0}
     - target: {fileID: 2523102504054653518, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.7
+      value: 177.16296
       objectReference: {fileID: 0}
     - target: {fileID: 2523102504054653518, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -259,6 +259,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5424499776903024986, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7620050071229607261, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
       propertyPath: m_Name
       value: GunCagadoEnemy Variant
@@ -266,6 +270,14 @@ PrefabInstance:
     - target: {fileID: 7620050071229607261, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8169450188545168538, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670558326245717808, guid: 6d5be1e1f9a3e184d9fbf5a9b03fbfd9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
